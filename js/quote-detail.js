@@ -17,6 +17,17 @@ function loadQuoteDetail() {
                 document.getElementById('quote-author').textContent = `- ${quote.author}`;
                 document.getElementById('quote-category').textContent = `Category: ${quote.category}`;
                 document.getElementById('quote-description').textContent = `Description: ${quote.description}`;
+
+                // Controleer of de afbeelding van de auteur beschikbaar is
+                const authorImage = quote.authorImage;
+                const authorImageElement = document.getElementById('author-image');
+
+                if (authorImage && authorImage.trim() !== "") { // Alleen als authorImage beschikbaar is en niet leeg
+                    authorImageElement.src = authorImage;
+                    authorImageElement.style.display = 'block'; // Maak de afbeelding zichtbaar
+                } else {
+                    authorImageElement.style.display = 'none'; // Verberg de afbeelding als er geen image is
+                }
             } else {
                 console.error('Quote not found.');
             }

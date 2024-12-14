@@ -5,11 +5,23 @@ let lives = 3;
 
 // Laad de citaten uit het JSON-bestand
 function loadQuotes() {
+    console.log("Loading quotes...");
     fetch('data/quotes.json')
-        .then(response => response.json())
+        .then(response => {
+            // Check of de response ok is
+            if (!response.ok) {
+                throw new Error('Failed to load quotes');
+            }
+            return response.json();
+        })
         .then(data => {
-            quotes = data;
-            nextQuote(); // Start de game met de eerste quote
+            console.log("Quotes loaded successfully:", data);
+            if (data.length > 0) {
+                quotes = data;
+                nextQuote(); // Start de game met de eerste quote
+            } else {
+                document.getElementById('quote-text').innerText = "No quotes available.";
+            }
         })
         .catch(error => {
             console.error('Error loading quotes:', error);
@@ -19,11 +31,18 @@ function loadQuotes() {
 
 // Kies een willekeurige quote en toon deze
 function nextQuote() {
+    if (quotes.length === 0) {
+        console.error("No quotes to display.");
+        document.getElementById('quote-text').innerText = "No quotes available.";
+        return;
+    }
+
     // Kies een willekeurige quote uit de lijst
     const randomIndex = Math.floor(Math.random() * quotes.length);
     currentQuote = quotes[randomIndex];
 
     // Toont de quote op het scherm
+    console.log("Current Quote: ", currentQuote);  // Voeg log toe om de geladen quote te controleren
     document.getElementById('quote-text').innerText = `"${currentQuote.text}"`;
 
     // Toon de auteursopties

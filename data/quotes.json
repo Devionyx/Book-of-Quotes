@@ -11,13 +11,63 @@
     "text": "In the middle of difficulty lies opportunity.",
     "author": "Albert Einstein",
     "category": "Wisdom",
-    "description": "A reminder that challenges often lead to new opportunities and growth."
+    "description": "A reminder that challenges often lead to new opportunities and growth.",
+    "authorImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/800px-Albert_Einstein_Head.jpg"
   },
   {
     "id": 3,
-    "text": "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+    "text": "The only limit to our realization of tomorrow is our doubts of today.",
+    "author": "Franklin D. Roosevelt",
+    "category": "Motivation",
+    "description": "This quote encourages self-belief and overcoming doubts to reach our full potential."
+  },
+  {
+    "id": 4,
+    "text": "The future belongs to those who believe in the beauty of their dreams.",
+    "author": "Eleanor Roosevelt",
+    "category": "Inspiration",
+    "description": "This quote emphasizes the importance of having a vision and believing in yourself."
+  },
+  {
+    "id": 5,
+    "text": "It does not matter how slowly you go as long as you do not stop.",
+    "author": "Confucius",
+    "category": "Wisdom",
+    "description": "A reminder that progress, no matter how small, is still progress."
+  },
+  {
+    "id": 6,
+    "text": "You must be the change you wish to see in the world.",
+    "author": "Mahatma Gandhi",
+    "category": "Inspiration",
+    "description": "This quote stresses the importance of personal responsibility in creating a better world."
+  },
+  {
+    "id": 7,
+    "text": "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    "author": "Winston Churchill",
+    "category": "Motivation",
+    "description": "An inspiring quote about resilience and the importance of perseverance."
+  },
+  {
+    "id": 8,
+    "text": "Don't watch the clock; do what it does. Keep going.",
+    "author": "Sam Levenson",
+    "category": "Motivation",
+    "description": "This quote encourages persistence and not being distracted by time."
+  },
+  {
+    "id": 9,
+    "text": "It always seems impossible until it's done.",
+    "author": "Nelson Mandela",
+    "category": "Inspiration",
+    "description": "A quote reminding us that difficult tasks can often feel overwhelming but are achievable."
+  },
+  {
+    "id": 10,
+    "text": "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
     "author": "Ralph Waldo Emerson",
-    "category": "Self-Improvement",
-    "description": "This quote encourages individuality and staying true to oneself."
+    "category": "Wisdom",
+    "description": "A reflection on the importance of inner strength and character."
   }
 ]

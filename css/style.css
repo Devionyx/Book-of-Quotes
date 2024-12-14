@@ -347,3 +347,26 @@ table td a {
 table td a:hover {
     text-decoration: underline;
 }
+/* Stijlen voor de quote-detailpagina */
+#quote-detail {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#quote-detail h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#quote-detail p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#author-image {
+    margin-top: 20px;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
