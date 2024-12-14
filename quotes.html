@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quotes</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <h1>The Book of Quotes</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="quote-of-the-day.html">Quote of the Day</a></li>
+      <li><a href="quotes.html">Quotes</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="quotes" id="quotes">
+  <h2>All Quotes</h2>
+
+  <!-- Zoekbalk voor citaten -->
+  <div class="search-container">
+    <input type="text" id="search-bar" placeholder="Search for quotes..." oninput="filterQuotes()">
+  </div>
+
+  <!-- Sorteeropties -->
+  <div class="sort-options">
+    <label for="sort-by">Sort by: </label>
+    <select id="sort-by" onchange="sortQuotes()">
+      <option value="author">Author</option>
+      <option value="text">Text</option>
+    </select>
+  </div>
+
+  <!-- Citaten worden hier geladen via JavaScript -->
+  <div id="quotes-list"></div>
+
+  <!-- Paginering knoppen -->
+  <div class="pagination">
+    <button id="prev-btn" onclick="prevPage()">Previous</button>
+    <button id="next-btn" onclick="nextPage()">Next</button>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 The Book of Quotes</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
