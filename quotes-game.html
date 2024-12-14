@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Quotes Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+    <h1>The Quotes Game</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quote-of-the-day.html">Quote of the Day</a></li>
+            <li><a href="quotes.html">Quotes</a></li>
+            <li><a href="categories.html">Categories</a></li>
+            <li><a href="quotes-game.html">The Quotes Game</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="game-content">
+    <h2>Guess the Author!</h2>
+    <p id="quote-text">Loading quote...</p>
+
+    <div id="options">
+        <!-- Auteurs worden hier toegevoegd -->
+    </div>
+
+    <p id="score">Score: 0</p>
+    <p id="lives">Lives: 3</p>
+</section>
+
+<!-- Pop-up voor meldingen -->
+<div id="popup" class="popup">
+    <p id="popup-message"></p>
+</div>
+
+<footer>
+    <p>&copy; 2024 The Book of Quotes. All rights reserved.</p>
+</footer>
+
+<script src="js/quotes-game.js"></script>
+</body>
+</html>

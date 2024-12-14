@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quotes</title>
+  <title>The Book of Quotes - Quotes</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,39 +14,39 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="quote-of-the-day.html">Quote of the Day</a></li>
       <li><a href="quotes.html">Quotes</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="quotes-game.html">The Quotes Game</a></li>
     </ul>
   </nav>
-</header>
-
-<section class="quotes" id="quotes">
-  <h2>All Quotes</h2>
-
-  <!-- Zoekbalk voor citaten -->
-  <div class="search-container">
-    <input type="text" id="search-bar" placeholder="Search for quotes..." oninput="filterQuotes()">
-  </div>
-
-  <!-- Sorteeropties -->
-  <div class="sort-options">
-    <label for="sort-by">Sort by: </label>
-    <select id="sort-by" onchange="sortQuotes()">
-      <option value="author">Author</option>
-      <option value="text">Text</option>
+  <div class="filters">
+    <!-- Zoekbalk -->
+    <input type="text" id="search-input" placeholder="Search quotes..." oninput="searchQuotes()">
+    <!-- Keuze voor zoeken op tekst of auteur -->
+    <select id="search-option" onchange="searchQuotes()">
+      <option value="text">Search by Text</option>
+      <option value="author">Search by Author</option>
+    </select>
+    <!-- Categorieën filter -->
+    <select id="category-filter" onchange="filterByCategory()">
+      <option value="">All Categories</option>
+      <option value="Motivation">Motivation</option>
+      <option value="Wisdom">Wisdom</option>
+      <option value="Love">Love</option>
+      <option value="Success">Success</option>
+      <option value="Humor">Humor</option>
     </select>
   </div>
+</header>
 
-  <!-- Citaten worden hier geladen via JavaScript -->
-  <div id="quotes-list"></div>
+<div id="quotes-list"></div>
 
-  <!-- Paginering knoppen -->
-  <div class="pagination">
-    <button id="prev-btn" onclick="prevPage()">Previous</button>
-    <button id="next-btn" onclick="nextPage()">Next</button>
-  </div>
-</section>
+<div class="pagination">
+  <button id="prev-btn" onclick="prevPage()" disabled>Prev</button>
+  <button id="next-btn" onclick="nextPage()">Next</button>
+</div>
 
 <footer>
-  <p>&copy; 2024 The Book of Quotes</p>
+  <p>&copy; 2024 The Book of Quotes. All rights reserved.</p>
 </footer>
 
 <script src="js/script.js"></script>

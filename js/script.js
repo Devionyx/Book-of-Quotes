@@ -1,46 +1,46 @@
 let quotes = [];
+let filteredQuotes = []; // Deze array houdt de gefilterde citaten bij
 let currentPage = 1;
-let quotesPerPage = 10; // Aantal citaten per pagina
+let quotesPerPage = 10;
 
 // Functie om citaten te laden
 function loadQuotes() {
-    fetch('data/quotes.json')  // Laad de JSON met citaten
+    fetch('data/quotes.json')
         .then(response => response.json())
         .then(data => {
-            quotes = data;  // Sla de citaten op in de globale variabele
-            displayQuotes();  // Toon de citaten
+            quotes = data;
+            filteredQuotes = quotes; // Initialiseer de gefilterde quotes als alle citaten
+            const category = getCategoryFromUrl();
+            if (category) {
+                // Als er een categorie in de URL staat, filter de citaten op die categorie
+                filteredQuotes = quotes.filter(quote => quote.category === category);
+                document.getElementById('category-filter').value = category; // Zet de categorie in de dropdown
+            }
+            displayQuotes();
         })
         .catch(error => {
             console.error('Error loading quotes:', error);
         });
 }
 
-// Functie om citaten weer te geven (met paginering)
+// Functie om de citaten weer te geven
 function displayQuotes() {
     const quotesContainer = document.getElementById('quotes-list');
-    quotesContainer.innerHTML = '';  // Maak de lijst leeg
+    quotesContainer.innerHTML = ''; // Maak de lijst leeg
 
     // Bepaal het bereik van citaten voor de huidige pagina
     const start = (currentPage - 1) * quotesPerPage;
     const end = start + quotesPerPage;
-    const quotesToDisplay = quotes.slice(start, end);
+    const quotesToDisplay = filteredQuotes.slice(start, end);
 
     // Voeg citaten toe aan de pagina
     quotesToDisplay.forEach(quote => {
         const quoteDiv = document.createElement('div');
         quoteDiv.classList.add('quote');
-        quoteDiv.innerHTML = `<p class="quote-text">"${quote.text}" – ${quote.author}</p>`;
+        quoteDiv.innerHTML = `<p class="quote-text">"${quote.text}" – ${quote.author}</p><p class="quote-category">Category: ${quote.category}</p>`;
         quotesContainer.appendChild(quoteDiv);
     });
 
-    // Controleer of de pagineringsknoppen zichtbaar moeten zijn
-    if (quotes.length > quotesPerPage) {
-        document.querySelector('.pagination').style.display = 'block';
-    } else {
-        document.querySelector('.pagination').style.display = 'none';
-    }
-
-    // Update de navigatieknoppen
     updatePaginationButtons();
 }
 
@@ -54,7 +54,7 @@ function prevPage() {
 
 // Functie om de volgende pagina te tonen
 function nextPage() {
-    const totalPages = Math.ceil(quotes.length / quotesPerPage);
+    const totalPages = Math.ceil(filteredQuotes.length / quotesPerPage);
     if (currentPage < totalPages) {
         currentPage++;
         displayQuotes();
@@ -63,63 +63,60 @@ function nextPage() {
 
 // Functie om de pagineringsknoppen in te schakelen of uit te schakelen
 function updatePaginationButtons() {
-    const totalPages = Math.ceil(quotes.length / quotesPerPage);
+    const totalPages = Math.ceil(filteredQuotes.length / quotesPerPage);
     document.getElementById('prev-btn').disabled = currentPage === 1;
     document.getElementById('next-btn').disabled = currentPage === totalPages;
 }
 
-// Functie voor zoeken
-function filterQuotes() {
-    const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+// Functie om citaten op basis van categorie te filteren
+function filterByCategory() {
+    const category = document.getElementById('category-filter').value;
+    let newFilteredQuotes = quotes;
 
-    const filteredQuotes = quotes.filter(quote => {
-        return quote.text.toLowerCase().includes(searchTerm) || quote.author.toLowerCase().includes(searchTerm);
-    });
-
-    displayQuotesForFilteredQuotes(filteredQuotes);
-}
-
-// Functie om gefilterde citaten weer te geven
-function displayQuotesForFilteredQuotes(filteredQuotes) {
-    const quotesContainer = document.getElementById('quotes-list');
-    quotesContainer.innerHTML = '';  // Maak de lijst leeg
-
-    // Voeg gefilterde citaten toe
-    filteredQuotes.forEach(quote => {
-        const quoteDiv = document.createElement('div');
-        quoteDiv.classList.add('quote');
-        quoteDiv.innerHTML = `<p class="quote-text">"${quote.text}" – ${quote.author}</p>`;
-        quotesContainer.appendChild(quoteDiv);
-    });
-
-    // Controleer of de pagineringsknoppen zichtbaar moeten zijn
-    if (filteredQuotes.length > quotesPerPage) {
-        document.querySelector('.pagination').style.display = 'block';
-    } else {
-        document.querySelector('.pagination').style.display = 'none';
+    if (category) {
+        newFilteredQuotes = quotes.filter(quote => quote.category === category);
     }
 
-    // Update de pagineringsknoppen
-    updatePaginationButtons();
+    filteredQuotes = newFilteredQuotes; // Update gefilterde citaten
+    searchQuotes(); // Zorg ervoor dat de zoekfunctie opnieuw wordt toegepast op de gefilterde citaten
 }
 
-// Functie voor sorteren
-function sortQuotes() {
-    const sortBy = document.getElementById('sort-by').value;
+// Functie om citaten op basis van de zoekterm te filteren
+function searchQuotes() {
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+    const searchOption = document.getElementById('search-option').value; // Haal op wat de gebruiker heeft geselecteerd (tekst of auteur)
 
-    let sortedQuotes;
-    if (sortBy === 'author') {
-        sortedQuotes = quotes.sort((a, b) => a.author.localeCompare(b.author));
-    } else if (sortBy === 'text') {
-        sortedQuotes = quotes.sort((a, b) => a.text.localeCompare(b.text));
+    let newFilteredQuotes = quotes;
+
+    // Als er een categorie is geselecteerd, pas deze filter toe
+    if (document.getElementById('category-filter').value) {
+        newFilteredQuotes = newFilteredQuotes.filter(quote =>
+            quote.category === document.getElementById('category-filter').value
+        );
     }
 
-    displayQuotesForFilteredQuotes(sortedQuotes);
+    // Als er een zoekterm is, filter dan de citaten op basis van de geselecteerde optie (tekst of auteur)
+    if (searchTerm) {
+        newFilteredQuotes = newFilteredQuotes.filter(quote => {
+            if (searchOption === "text") {
+                return quote.text.toLowerCase().includes(searchTerm);
+            } else if (searchOption === "author") {
+                return quote.author.toLowerCase().includes(searchTerm);
+            }
+            return false;
+        });
+    }
+
+    filteredQuotes = newFilteredQuotes; // Update de gefilterde citaten
+    currentPage = 1; // Reset naar de eerste pagina bij elke zoekopdracht
+    displayQuotes(); // Weergave van de gefilterde citaten
 }
 
-// Laad de citaten bij het laden van de pagina
-window.onload = loadQuotes;
-
+// Haal de categorie op uit de URL-queryparameter
+function getCategoryFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('category');
+}
 
 
 // Functie om de Quote of the Day te tonen, op basis van de datum
@@ -144,6 +141,13 @@ function loadQuoteOfTheDay() {
             console.error('Fout bij het laden van de quote of the day:', error);
         });
 }
+
+// Laad de citaten bij het laden van de pagina
+window.onload = loadQuotes;
+
+
+
+
 
 // Laad de juiste content afhankelijk van de pagina
 if (document.getElementById('quotes')) {
