@@ -44,9 +44,14 @@ nav ul li a:hover {
     color: #f39c12;
 }
 
+section {
+    margin-bottom: 100px;
+}
+
 /* Introductie sectie */
 .intro {
-    background: url('images/background.jpg') no-repeat center center/cover;
+    background: linear-gradient(to right, #ff7e5f, #feb47b, #6a11cb, #2575fc);
+
     color: white;
     text-align: center;
     padding: 100px 20px;
@@ -89,6 +94,7 @@ nav ul li a:hover {
     background-color: #f9f9f9;
     padding: 60px 20px;
     text-align: center;
+    margin-bottom: 40px; /* Toegevoegde marge onder de game-sectie */
 }
 
 .game-container {
@@ -125,6 +131,22 @@ nav ul li a:hover {
     background-color: #e67e22;
 }
 
+/* Detailpagina */
+#quote-detail {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#quote-detail h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#quote-detail p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
 /* Footer styling */
 footer {
     background-color: #333;
@@ -137,51 +159,57 @@ footer {
 }
 
 
-section {
-    padding: 20px;
+/* Stijlen voor de quote tekst */
+.quote-text {
+    font-size: 18px;
+    font-style: italic;
+    color: #333; /* Kleur voor de tekst */
+    margin-bottom: 10px;
+    padding: 10px;
+    line-height: 1.6;
+}
+
+/* Stijlen voor de quote categorie */
+.quote-category {
+    font-size: 14px;
+    color: #888; /* Grijze kleur voor de categorie */
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .filters {
-    margin-bottom: 20px;
+    margin-top: 20px;
     text-align: center;
 }
 
-#search-input, #search-option, #category-filter {
-    padding: 8px;
+.filters input,
+.filters select {
+    margin: 5px;
+    padding: 10px;
     font-size: 16px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-}
-
-#search-input {
-    width: 300px;
-}
-
-#category-filter {
-    width: 180px;
 }
 
 #quotes-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 50px;  /* Voeg marge toe onder de citatenlijst */
+    margin: 20px auto;
+    margin-bottom: 50px;
+    padding: 20px;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 8px;
 }
 
 .quote {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px 0;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.quote-text {
+    font-size: 18px;
+    font-style: italic;
 }
 
 .quote-category {
-    font-size: 0.9em;
-    color: #777;
+    font-size: 14px;
+    color: #888;
 }
 
 .pagination {
@@ -205,6 +233,13 @@ section {
 .pagination button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+#pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 200px;
 }
 
 #game-content {
@@ -276,3 +311,39 @@ section {
 }
 
 
+h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    font-size: 1.1em;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #333;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table td a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+table td a:hover {
+    text-decoration: underline;
+}

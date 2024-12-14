@@ -13,6 +13,7 @@ function loadQuotes() {
         })
         .catch(error => {
             console.error('Error loading quotes:', error);
+            document.getElementById('quote-text').innerText = "Failed to load quotes.";
         });
 }
 
