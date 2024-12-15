@@ -4,7 +4,349 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Book of Quotes - Home</title>
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
+      background-size: 400% 400%;
+      animation: gradientFade 30s ease infinite; /* Continuous smooth animation */
+      color: #ffffff;
+      position: relative;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    @keyframes gradientFade {
+      0% { background-position: 0% 50%; }
+      25% { background-position: 25% 50%; }
+      50% { background-position: 50% 50%; }
+      75% { background-position: 75% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.7);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .logo h1 {
+      font-size: 2rem;
+      margin: 0;
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 15px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+    }
+
+    /* Zorg ervoor dat de secties uit het scherm schuiven */
+    .title-section,
+    .quote-container {
+      transition: transform 1s ease, opacity 1s ease;
+    }
+
+    /* Beginpositie van de sectie buiten het scherm */
+    .title-section {
+      transform: translateY(0);
+    }
+
+    .quote-container {
+      transform: translateY(0);
+    }
+
+    /* Wanneer de sectie uit het scherm moet schuiven */
+    .hide-title-section {
+      transform: translateY(-100vh); /* Schuif de hele sectie omhoog */
+    }
+
+    .hide-quote-container {
+      transform: translateY(100vh); /* Schuif de citaten naar beneden uit het zicht */
+    }
+
+    /* Animatie voor de quote of the day container die erin schuift */
+    .show-on-scroll {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+
+    /* De sectie waarin de titel en de citaten zich bevinden */
+    .title-section {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 70vh; /* Hoofdgedeelte waar de titel zich bevindt */
+      text-align: center;
+    }
+
+    .quote-container {
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.6); /* Doorzichtig zwart */
+      color: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 80%;
+      width: 350px;
+      text-align: center;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      opacity: 0; /* Begin volledig onzichtbaar */
+      transform: translateY(20px); /* Begin onder de titel */
+      animation: fadeInMove 3s ease-in-out forwards, floatEffect 15s cubic-bezier(0.4, 0, 0.2, 1) infinite; /* Vloeiende animatie met zwevend effect */
+    }
+
+
+    /* Plaatsing van de citaten rond de titel */
+    #quote1 {
+      top: 10%;
+      left: 5%;
+    }
+
+    #quote2 {
+      top: 10%;
+      right: 5%;
+    }
+
+    #quote3 {
+      bottom: 10%;
+      left: 5%;
+    }
+
+    #quote4 {
+      bottom: 10%;
+      right: 5%;
+    }
+
+    /* Animatie voor de fade-in en beweging */
+    @keyframes fadeInMove {
+      0% {
+        opacity: 0;
+        transform: translateY(20px); /* Begin onderaan */
+      }
+      50% {
+        opacity: 0.5;
+        transform: translateY(-10px); /* Beweeg iets omhoog */
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0); /* Eindig op de juiste positie */
+      }
+    }
+
+    /* Animatie voor de zwevende beweging (oneindig en vloeiend) */
+    @keyframes floatEffect {
+      0% {
+        transform: translateY(0) translateX(0); /* Begin op de oorspronkelijke positie */
+      }
+      25% {
+        transform: translateY(-30px) translateX(30px); /* Beweeg omhoog en naar rechts */
+      }
+      50% {
+        transform: translateY(30px) translateX(-30px); /* Beweeg omlaag en naar links */
+      }
+      75% {
+        transform: translateY(-20px) translateX(-40px); /* Beweeg omhoog en naar links */
+      }
+      100% {
+        transform: translateY(0) translateX(0); /* Keer terug naar de oorspronkelijke positie */
+      }
+    }
+
+
+    /* Vertraging voor verschillende citaten */
+    #quote1 {
+      animation-delay: 0s;
+    }
+
+    #quote2 {
+      animation-delay: 1s; /* Laat deze 1 seconde later verschijnen */
+    }
+
+    #quote3 {
+      animation-delay: 2s; /* Laat deze 2 seconden later verschijnen */
+    }
+
+    #quote4 {
+      animation-delay: 3s; /* Laat deze 3 seconden later verschijnen */
+    }
+
+    /* Zet de positie in de animatie om een vloeiende overgang te garanderen */
+    .quote-container {
+      animation-timing-function: linear;
+    }
+
+    /* CSS voor de animaties van de citaten naar de hoeken */
+    .hide-title-section {
+      transform: translateY(-100vh); /* Titel vliegt naar boven uit zicht */
+    }
+
+    .hide-quote-container {
+      opacity: 0; /* Zorg dat citaten onzichtbaar worden */
+      transform: translateY(100vh); /* Citaten verdwijnen naar beneden */
+    }
+
+    #quote1.hide-quote-container {
+      transform: translate(-100vw, -100vh); /* Linksboven buiten beeld */
+    }
+
+    #quote2.hide-quote-container {
+      transform: translate(100vw, -100vh); /* Rechtsboven buiten beeld */
+    }
+
+    #quote3.hide-quote-container {
+      transform: translate(-100vw, 100vh); /* Linksonder buiten beeld */
+    }
+
+    #quote4.hide-quote-container {
+      transform: translate(100vw, 100vh); /* Rechtsonder buiten beeld */
+    }
+
+    /* Andere CSS animaties blijven hetzelfde */
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+    }
+
+    h1 {
+      font-size: 4rem; /* Grote tekst voor de titel */
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+      margin: 0;
+    }
+
+
+
+    .intro-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+
+    .intro-content p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+
+
+    .game-container h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+
+    .game-container p {
+      font-size: 1.2rem;
+      margin: 10px 0 20px 0;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-top: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
+      margin-top: 40px;
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      color: #fff;
+      margin: 0;
+    }
+    /* Animatie voor de scroll-container die van onder naar boven beweegt */
+    .scroll-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 800px;
+      margin: 20px auto;
+      transform: translateY(100vh); /* Begin onder het scherm */
+      opacity: 0; /* Begin met een onzichtbare container */
+      transition: transform 1s ease, opacity 1s ease; /* Vloeiende animatie */
+    }
+
+    /* Wanneer de container in beeld komt, beweegt deze naar boven */
+    .show-on-scroll {
+      transform: translateY(0); /* Verplaats naar de oorspronkelijke positie */
+      opacity: 1; /* Maak de container zichtbaar */
+    }
+
+    /* Stijl voor de Engelse tekst en knop */
+    .scroll-container h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+      margin-bottom: 20px;
+    }
+
+    .scroll-container p {
+      font-size: 1.2rem;
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .scroll-container a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #0206a1;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.2rem;
+      transition: background-color 0.3s;
+    }
+
+    .scroll-container a:hover {
+      background-color: #0033cc;
+    }
+
+
+  </style>
 </head>
 <body>
 <header>
@@ -21,23 +363,84 @@
     </ul>
   </nav>
 </header>
+<main>
+  <section class="title-section">
+    <h1>Welcome to The Book of Quotes!</h1>
+    <!-- Citaten Containers rond de titel -->
+    <div class="quote-container" id="quote1">
+      <p>"The only way to do great work is to love what you do." - Steve Jobs</p>
+    </div>
+    <div class="quote-container" id="quote2">
+      <p>"In the end, we will remember not the words of our enemies, but the silence of our friends." - Martin Luther King Jr.</p>
+    </div>
+    <div class="quote-container" id="quote3">
+      <p>"To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." - Ralph Waldo Emerson</p>
+    </div>
+    <div class="quote-container" id="quote4">
+      <p>"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill</p>
+    </div>
+  </section>
 
-<section class="intro">
-  <div class="intro-content">
-    <h2>Welcome to The Book of Quotes!</h2>
-    <p>This website features a collection of famous quotes from various times and thinkers. Get inspired by the most beautiful words ever spoken.</p>
-    <p><a href="quote-of-the-day.html" class="cta-button">Check out the Quote of the Day!</a></p>
-  </div>
-</section>
+  <section>
+    <div class="scroll-container">
+      <div>
+        <h2>Discover Inspirational Quotes</h2>
+        <p>Explore a world of wisdom, humor, and motivation. Find a quote that speaks to you every day!</p>
+        <a href="quote-of-the-day.html">The Quote of the Day</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-<!-- New section for Quotes Game -->
-<section class="game-section">
-  <div class="game-container">
-    <h2>Test Your Knowledge!</h2>
-    <p>Think you're good with quotes? Play the Quotes Game and test your knowledge of famous quotes and authors.</p>
-    <a href="quotes-game.html" class="cta-button">Play the Quotes Game</a>
-  </div>
-</section>
+<script>
+  // Detecteer de scrollrichting en pas de animaties toe
+  let lastScrollTop = 0;
+
+  document.addEventListener("scroll", function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Verkrijg de secties die we willen verbergen en tonen
+    const titleSection = document.querySelector('.title-section');
+    const quoteContainers = document.querySelectorAll('.quote-container');
+
+    // Als we naar beneden scrollen
+    if (currentScroll > lastScrollTop) {
+      titleSection.classList.add('hide-title-section');
+      quoteContainers.forEach(quote => {
+        quote.classList.add('hide-quote-container');
+      });
+    }
+    // Als we naar boven scrollen
+    else {
+      titleSection.classList.remove('hide-title-section');
+      quoteContainers.forEach(quote => {
+        quote.classList.remove('hide-quote-container');
+      });
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll
+  });
+
+  // Observing when the scroll-container comes into view
+  document.addEventListener("DOMContentLoaded", function() {
+    const scrollContainer = document.querySelector('.scroll-container');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Wanneer de container in beeld komt, voeg de klasse toe om te laten schuiven
+          entry.target.classList.add('show-on-scroll');
+        }
+      });
+    }, {
+      threshold: 0.5 // Zorg ervoor dat de container zichtbaar is voor 50% van zijn hoogte
+    });
+
+    observer.observe(scrollContainer);
+  });
+
+
+</script>
 
 <footer>
   <p>&copy; 2024 The Book of Quotes. All rights reserved.</p>
