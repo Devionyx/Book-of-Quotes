@@ -1,53 +1,136 @@
 /* Algemene body stijlen */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     margin: 0;
-    padding: 0;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
+    background-size: 400% 400%;
+    animation: gradientFade 30s ease infinite;
+    color: #ffffff;
+    position: relative;
 }
 
-/* Header styling */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+/* Scrollbar verbergen */
+::-webkit-scrollbar {
+    display: none;
+}
+/* Achtergrond animatie */
+@keyframes gradientFade {
+    0% { background-position: 0 50%; }
+    25% { background-position: 25% 50%; }
+    50% { background-position: 50% 50%; }
+    75% { background-position: 75% 50%; }
+    100% { background-position: 0 50%; }
 }
 
-header .logo h1 {
-    margin: 0;
-    font-size: 2.5em;
-    letter-spacing: 2px;
+
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
-/* Navigatie stijl */
 nav ul {
-    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
     padding: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 0;
+    gap: 10px;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
-    font-size: 1.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #f39c12;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    margin: 0;
 }
 
+h2 {
+    font-size: 3rem;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
 section {
     margin-bottom: 100px;
 }
 
+
+
+#quote-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#quote-container p{
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+@keyframes bordercolor {
+    0% { border-color: #2575fc; }
+    25% { border-color: #6a11cb; }
+    50% { border-color: #feb47b; }
+    75% { border-color: #4CAF50; }
+    100% { border-color: #2575fc; }
+}
+
+
+.quote-of-the-day-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 3px solid #2575fc;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 30px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    animation: bordercolor 5s ease infinite;
+}
+
+.quote-of-the-day {
+    margin-top: 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.quote-of-the-day-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 /* Introductie sectie */
 .intro {
     background: linear-gradient(to right, #ff7e5f, #feb47b, #6a11cb, #2575fc);
@@ -149,13 +232,17 @@ section {
 
 /* Footer styling */
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #fff;
+    margin: 0;
 }
 
 
@@ -272,6 +359,10 @@ footer {
     margin: 20px;
 }
 
+.slide-up-title {
+    margin-top: 50px;
+}
+
 /* Stijl voor de pop-up melding */
 .popup {
     display: none;
@@ -311,11 +402,6 @@ footer {
 }
 
 
-h2 {
-    text-align: center;
-    font-size: 2em;
-    color: #333;
-}
 
 table {
     width: 100%;

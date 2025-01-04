@@ -141,13 +141,31 @@ function loadQuoteOfTheDay() {
             // Kies de quote van de dag
             const quoteOfTheDay = quotes[quoteIndex];
 
-            const quoteContainer = document.getElementById('quote-container');
-            quoteContainer.innerHTML = `<p class="quote-text">"${quoteOfTheDay.text}" – ${quoteOfTheDay.author}</p>`;
+            // Start het type-effect
+            typeText(`"${quoteOfTheDay.text}" – ${quoteOfTheDay.author}`);
         })
         .catch(error => {
             console.error('Fout bij het laden van de quote of the day:', error);
         });
 }
+
+function typeText(fullText) {
+    const quoteContainer = document.getElementById('quote-container');
+    quoteContainer.innerHTML = ''; // Zorg dat de container leeg is
+    let index = 0;
+
+    function typeCharacter() {
+        if (index < fullText.length) {
+            quoteContainer.textContent += fullText.charAt(index); // Voeg de volgende letter toe
+            index++;
+            setTimeout(typeCharacter, 50); // Typ snelheid (50ms per letter)
+        }
+    }
+
+    typeCharacter(); // Start de typing-functie
+}
+
+
 
 // Laad de citaten bij het laden van de pagina
 

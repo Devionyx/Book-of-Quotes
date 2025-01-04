@@ -444,37 +444,61 @@
     }
 
 
-    /* Container styling */
     .categories-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Flexibele kolommen */
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexibele kolommen */
       gap: 20px; /* Ruimte tussen items */
-      padding: 20px; /* Binnenmarge */
-      background-color: #f9f9f9; /* Achtergrondkleur */
-      border-radius: 10px; /* Ronde hoeken */
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Zachte schaduw */
-      height: 600px;
+      padding: 40px; /* Binnenmarge */
+      background-color: rgba(0, 0, 0, 0); /* Volledig doorzichtig */
+      border-radius: 12px; /* Ronde hoeken */
+      margin: 40px auto; /* Ruimte rondom */
+      height: 500px; /*
+      width: 80%; /* Maximaal breedte */
+      max-width: 1200px; /* Beperkte breedte voor grote schermen */
+      align-items: start; /* Items uitlijnen aan de bovenkant */
+      animation: fadeInMove 1.5s ease-out;
     }
 
     /* Categorie-items styling */
     .category-item {
-      background-color: #ffffff; /* Witte achtergrond */
+      display: flex;
+      flex-direction: column; /* Verticale structuur */
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1); /* Licht doorzichtige achtergrond */
       padding: 20px; /* Binnenmarge */
+      padding-top: 40px;
+      padding-bottom: 40px;
       text-align: center; /* Tekst gecentreerd */
-      font-size: 16px; /* Tekstgrootte */
+      font-size: 1.1rem; /* Tekstgrootte */
       font-weight: bold; /* Vetgedrukte tekst */
-      border: 2px solid #ddd; /* Rand */
-      border-radius: 8px; /* Ronde hoeken */
-      transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animatie-effect */
+      text-decoration: none;
+      border: 2px solid rgba(255, 255, 255, 0.2); /* Rand */
+      border-radius: 10px; /* Ronde hoeken */
+      color: #ffffff; /* Witte tekst */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Diepte-effect */
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease; /* Animatie-effect */
     }
 
     /* Hover-effect */
     .category-item:hover {
-      transform: translateY(-5px); /* Beweeg omhoog bij hover */
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Vergroot schaduw */
+      transform: translateY(-10px) scale(1.05); /* Beweeg omhoog en vergroot bij hover */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Vergroot schaduw */
+      border: 2px solid #8a2be2; /* Paars gekleurde rand bij hover */
     }
 
+    .category-item p {
+      margin: 10px 0 0; /* Ruimte bovenaan */
+      font-size: 0.9rem; /* Kleiner subtiele tekst */
+      font-weight: 300; /* Minder vet voor secundaire tekst */
+      color: #ccc; /* Subtiele kleur voor beschrijvingen */
+    }
 
+    .category-item h3 {
+      font-size: 1.3rem; /* Grotere titeltekst */
+      margin: 0 0 10px; /* Ruimte onder de titel */
+      color: #fff; /* Heldere kleur voor de titel */
+    }
     .categories-section {
       display: none;
       opacity: 0;
@@ -542,13 +566,13 @@
   </section>
 
   <section class="categories-section">
+    <h1>Categories</h1>
     <div class="categories-grid">
-      <div class="category-item">Category 1</div>
-      <div class="category-item">Category 2</div>
-      <div class="category-item">Category 3</div>
-      <div class="category-item">Category 4</div>
-      <div class="category-item">Category 5</div>
-      <div class="category-item">Category 6</div>
+      <a class="category-item" href="quotes.html?category=Motivation">Motivation</a>
+      <a class="category-item" href="quotes.html?category=Wisdom">Wisdom</a>
+      <a class="category-item" href="quotes.html?category=Love">Love</a>
+      <a class="category-item" href="quotes.html?category=Success">Success</a>
+      <a class="category-item" href="quotes.html?category=Humor">Humor</a>
     </div>
 
   </section>
