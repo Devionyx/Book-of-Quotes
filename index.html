@@ -5,37 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Book of Quotes - Home</title>
   <style>
+    /* Algemene styling */
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
       background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
       background-size: 400% 400%;
-      animation: gradientFade 30s ease infinite; /* Continuous smooth animation */
+      animation: gradientFade 30s ease infinite;
       color: #ffffff;
       position: relative;
     }
+
+    /* Scrollbar verbergen */
     ::-webkit-scrollbar {
       display: none;
     }
 
+    /* Achtergrond animatie */
     @keyframes gradientFade {
-      0% { background-position: 0% 50%; }
+      0% { background-position: 0 50%; }
       25% { background-position: 25% 50%; }
       50% { background-position: 50% 50%; }
       75% { background-position: 75% 50%; }
-      100% { background-position: 0% 50%; }
+      100% { background-position: 0 50%; }
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: rgba(0, 0, 0, 0.7);
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
-    }
-
+    /* Logo */
     .logo h1 {
       font-size: 2rem;
       margin: 0;
@@ -43,73 +38,66 @@
       text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
     }
 
-    nav ul {
+    /* Navigatie menu */
+    nav {
       display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
+      justify-content: center;
+      margin-top: 20px;
     }
 
-    nav ul li {
-      margin: 0 15px;
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 10px;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: #fff;
-      padding: 10px 15px;
-      transition: background 0.3s;
-    }
-
-    nav ul li a:hover {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-    }
-
-    /* Zorg ervoor dat de secties uit het scherm schuiven */
-    .title-section,
-    .quote-container {
-      transition: transform 1s ease, opacity 1s ease;
-    }
-
-    /* Beginpositie van de sectie buiten het scherm */
-    .title-section {
-      transform: translateY(0);
-    }
-
-    .quote-container {
-      transform: translateY(0);
-    }
-
-    /* Wanneer de sectie uit het scherm moet schuiven */
-    .hide-title-section {
-      transform: translateY(-100vh); /* Schuif de hele sectie omhoog */
-    }
-
-    .hide-quote-container {
-      transform: translateY(100vh); /* Schuif de citaten naar beneden uit het zicht */
-    }
-
-    /* Animatie voor de quote of the day container die erin schuift */
-    .show-on-scroll {
-      transform: translateX(0);
-      opacity: 1;
-    }
-
-
-    /* De sectie waarin de titel en de citaten zich bevinden */
-    .title-section {
-      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 70vh; /* Hoofdgedeelte waar de titel zich bevindt */
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      padding: 15px 20px;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Titelsectie */
+    .title-section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-align: center;
+      transition: transform 1s ease, opacity 1s ease;
+    }
+    /* Titels */
+    h1 {
+      font-size: 4rem;
+      color: #ffffff;
+      text-align: center;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+      margin: 0;
     }
 
     .quote-container {
       position: absolute;
-      background-color: rgba(0, 0, 0, 0.6); /* Doorzichtig zwart */
+      background-color: rgba(0, 0, 0, 0.6);
       color: #fff;
       padding: 15px;
       border-radius: 10px;
@@ -118,164 +106,225 @@
       text-align: center;
       font-size: 1.2rem;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      opacity: 0; /* Begin volledig onzichtbaar */
-      transform: translateY(20px); /* Begin onder de titel */
-      animation: fadeInMove 3s ease-in-out forwards, floatEffect 15s cubic-bezier(0.4, 0, 0.2, 1) infinite; /* Vloeiende animatie met zwevend effect */
+      opacity: 0;
+
     }
 
-
-    /* Plaatsing van de citaten rond de titel */
     #quote1 {
-      top: 10%;
+      top: 20%;
       left: 5%;
     }
 
     #quote2 {
-      top: 10%;
+      top: 20%;
       right: 5%;
     }
 
     #quote3 {
-      bottom: 10%;
+      bottom: 20%;
       left: 5%;
     }
 
     #quote4 {
-      bottom: 10%;
+      bottom: 20%;
       right: 5%;
     }
 
-    /* Animatie voor de fade-in en beweging */
-    @keyframes fadeInMove {
+    @keyframes leftupout {
       0% {
-        opacity: 0;
-        transform: translateY(20px); /* Begin onderaan */
-      }
-      50% {
-        opacity: 0.5;
-        transform: translateY(-10px); /* Beweeg iets omhoog */
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+        transition: transform 3s ease;
       }
       100% {
         opacity: 1;
-        transform: translateY(0); /* Eindig op de juiste positie */
+        transform: translateX(-130%) translateY(-190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
       }
     }
-
-    /* Animatie voor de zwevende beweging (oneindig en vloeiend) */
-    @keyframes floatEffect {
+    @keyframes rightupout {
       0% {
-        transform: translateY(0) translateX(0); /* Begin op de oorspronkelijke positie */
-      }
-      25% {
-        transform: translateY(-30px) translateX(30px); /* Beweeg omhoog en naar rechts */
-      }
-      50% {
-        transform: translateY(30px) translateX(-30px); /* Beweeg omlaag en naar links */
-      }
-      75% {
-        transform: translateY(-20px) translateX(-40px); /* Beweeg omhoog en naar links */
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+        transition: transform 3s ease;
       }
       100% {
-        transform: translateY(0) translateX(0); /* Keer terug naar de oorspronkelijke positie */
+        opacity: 1;
+        transform: translateX(130%) translateY(-190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      }
+    }
+
+    @keyframes rightdownout {
+      0% {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+        transition: transform 3s ease;
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(130%) translateY(190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      }
+    }
+    @keyframes leftdownout {
+      0% {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+        transition: transform 3s ease;
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-130%) translateY(190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      }
+    }
+
+    /* Fade-in en beweging animatie */
+    @keyframes fadeInMove {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      50% {
+        opacity: 0.5;
+        transform: translateY(-10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatEffect1 {
+      0% {
+        transform: translate(0, 0); /* Beginpunt */
+      }
+      25% {
+        transform: translate(40px, -40px); /* Beweegt naar rechtsboven */
+      }
+      50% {
+        transform: translate(80px, 0); /* Beweegt naar rechts */
+      }
+      75% {
+        transform: translate(40px, 40px); /* Beweegt naar rechtsonder */
+      }
+      100% {
+        transform: translate(0, 0); /* Terug naar beginpunt */
+      }
+    }
+
+    @keyframes floatEffect2 {
+      0% {
+        transform: translate(0, 0); /* Beginpunt */
+      }
+      25% {
+        transform: translate(-40px, -40px); /* Beweegt naar linksboven */
+      }
+      50% {
+        transform: translate(-80px, 0); /* Beweegt naar links */
+      }
+      75% {
+        transform: translate(-40px, 40px); /* Beweegt naar linksonder */
+      }
+      100% {
+        transform: translate(0, 0); /* Terug naar beginpunt */
+      }
+    }
+
+    @keyframes floatEffect3 {
+      0% {
+        transform: translate(0, 0); /* Beginpunt */
+      }
+      25% {
+        transform: translate(50px, 50px); /* Beweegt naar rechts beneden */
+      }
+      50% {
+        transform: translate(100px, 100px); /* Beweegt naar verder naar rechts beneden */
+      }
+      75% {
+        transform: translate(50px, 150px); /* Beweegt verder naar rechtsonder */
+      }
+      100% {
+        transform: translate(0, 0); /* Terug naar beginpunt */
+      }
+    }
+
+    @keyframes floatEffect4 {
+      0% {
+        transform: translate(0, 0); /* Beginpunt */
+      }
+      25% {
+        transform: translate(-50px, 100px); /* Beweegt naar links beneden */
+      }
+      50% {
+        transform: translate(-100px, 100px); /* Beweegt naar verder naar links beneden */
+      }
+      75% {
+        transform: translate(-50px, 50px); /* Beweegt verder naar linksonder */
+      }
+      100% {
+        transform: translate(0, 0); /* Terug naar beginpunt */
       }
     }
 
 
-    /* Vertraging voor verschillende citaten */
-    #quote1 {
-      animation-delay: 0s;
-    }
-
-    #quote2 {
-      animation-delay: 1s; /* Laat deze 1 seconde later verschijnen */
-    }
-
-    #quote3 {
-      animation-delay: 2s; /* Laat deze 2 seconden later verschijnen */
-    }
-
-    #quote4 {
-      animation-delay: 3s; /* Laat deze 3 seconden later verschijnen */
-    }
-
-    /* Zet de positie in de animatie om een vloeiende overgang te garanderen */
-    .quote-container {
-      animation-timing-function: linear;
-    }
-
-    /* CSS voor de animaties van de citaten naar de hoeken */
-    .hide-title-section {
-      transform: translateY(-100vh); /* Titel vliegt naar boven uit zicht */
-    }
-
-    .hide-quote-container {
-      opacity: 0; /* Zorg dat citaten onzichtbaar worden */
-      transform: translateY(100vh); /* Citaten verdwijnen naar beneden */
-    }
-
-    #quote1.hide-quote-container {
-      transform: translate(-100vw, -100vh); /* Linksboven buiten beeld */
-    }
-
-    #quote2.hide-quote-container {
-      transform: translate(100vw, -100vh); /* Rechtsboven buiten beeld */
-    }
-
-    #quote3.hide-quote-container {
-      transform: translate(-100vw, 100vh); /* Linksonder buiten beeld */
-    }
-
-    #quote4.hide-quote-container {
-      transform: translate(100vw, 100vh); /* Rechtsonder buiten beeld */
-    }
-
-    /* Andere CSS animaties blijven hetzelfde */
-
-    section {
+    .quotes-section-1 {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 50vh;
     }
-
-    h1 {
-      font-size: 4rem; /* Grote tekst voor de titel */
-      color: #ffffff;
-      text-align: center;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-      margin: 0;
+    .quotes-section-2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
-
-
-    .intro-content h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #ffffff;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-    }
-
-    .intro-content p {
-      font-size: 1.2rem;
-      margin: 10px 0;
-      line-height: 1.6;
+    .quotes-section-3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
 
 
-    .game-container h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #ffffff;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    .quotes-container-1 {
+      padding: 40px;
+      margin: 20px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      width: 60%;
+      display: flex;
+      justify-content: space-around;
+      gap: 1em;
+      align-items: center;
+      flex-direction: column;
     }
 
-    .game-container p {
-      font-size: 1.2rem;
-      margin: 10px 0 20px 0;
-      line-height: 1.6;
-    }
+    .quotes-container-2 {
+      padding: 40px;
+      margin: 20px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      width: 60%;
+      display: flex;
+      justify-content: space-around;
+      gap: 1em;
+      align-items: center;
+      flex-direction: column;
 
+    }
+    .quotes-container-3 {
+      padding: 40px;
+      margin: 20px;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      width: 60%;
+      display: flex;
+      justify-content: space-around;
+      gap: 1em;
+      align-items: center;
+      flex-direction: column;
+
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -290,160 +339,292 @@
       color: #fff;
       margin: 0;
     }
-    /* Animatie voor de scroll-container die van onder naar boven beweegt */
-    .scroll-container {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 20px;
-      border-radius: 10px;
-      width: 80%;
-      max-width: 800px;
-      margin: 20px auto;
-      transform: translateY(100vh); /* Begin onder het scherm */
-      opacity: 0; /* Begin met een onzichtbare container */
-      transition: transform 1s ease, opacity 1s ease; /* Vloeiende animatie */
+
+
+    .slide-left-up {
+      animation: fadeInMove 3s ease-in-out forwards, floatEffect1 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .slide-left-up.visible {
+      animation: leftupout 1s ease-out forwards;
+      opacity: 1;
     }
 
-    /* Wanneer de container in beeld komt, beweegt deze naar boven */
-    .show-on-scroll {
-      transform: translateY(0); /* Verplaats naar de oorspronkelijke positie */
-      opacity: 1; /* Maak de container zichtbaar */
+    .slide-right-up {
+      animation: fadeInMove 3s ease-in-out forwards, floatEffect2 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .slide-right-up.visible {
+      animation: rightupout 1s ease-out forwards;
+      opacity: 1;
     }
 
-    /* Stijl voor de Engelse tekst en knop */
-    .scroll-container h2 {
-      font-size: 2rem;
-      color: #ffffff;
-      text-align: center;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-      margin-bottom: 20px;
+    .slide-left-down {
+      animation: fadeInMove 3s ease-in-out forwards, floatEffect3 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .slide-left-down.visible {
+      animation: leftdownout 1s ease-out forwards;
+      opacity: 1;
     }
 
-    .scroll-container p {
-      font-size: 1.2rem;
-      color: #ffffff;
-      text-align: center;
-      margin-bottom: 20px;
+    .slide-right-down {
+      animation: fadeInMove 3s ease-in-out forwards, floatEffect4 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .slide-right-down.visible {
+      animation: rightdownout 1s ease-out forwards;
+      opacity: 1;
     }
 
-    .scroll-container a {
-      display: inline-block;
-      text-decoration: none;
-      background-color: #0206a1;
-      color: #ffffff;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 1.2rem;
-      transition: background-color 0.3s;
+    .slide-up-title {
+      transform: translateY(0); /* Het element beweegt naar zijn originele positie */
+      transition: transform 1s ease; /* De duur en de overgangseffecten */
     }
 
-    .scroll-container a:hover {
-      background-color: #0033cc;
+    /* Stijl wanneer het element moet verschijnen (sliden van links) */
+    .slide-up-title.visible {
+      transform: translateY(-400%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      transition: transform 1s ease; /* De duur en de overgangseffecten */
+    }
+    .slide-up-nav{
+      transform: translateY(0); /* Het element beweegt naar zijn originele positie */
+      transition: transform 1s ease; /* De duur en de overgangseffecten */
+    }
+
+    /* Stijl wanneer het element moet verschijnen (sliden van links) */
+    .slide-up-nav.visible {
+      transform: translateY(-550%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      transition: transform 1s ease; /* De duur en de overgangseffecten */
+    }
+
+    .slide-up-quotes-section1{
+      transform: translateY(0); /* Het element beweegt naar zijn originele positie */
+      opacity: 0;
+      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
+    }
+
+    /* Stijl wanneer het element moet verschijnen (sliden van links) */
+    .slide-up-quotes-section1.visible {
+      opacity: 1;
+      transform: translateY(-200%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
+    }
+
+    .slide-up-quotes-section1.moreup {
+      opacity: 0;
+      transform: translateY(-400%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
+    }
+
+
+    .slide-up-quotes-section2{
+      transform: translateY(0); /* Het element beweegt naar zijn originele positie */
+      opacity: 0;
+      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
+    }
+
+    .slide-up-quotes-section2.visible {
+      opacity: 1;
+      transform: translateY(-300%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
+    }
+    .slide-up-quotes-section2.moreup {
+      opacity: 0;
+      transform: translateY(-400%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
+    }
+
+    .slide-up-quotes-section3{
+      transform: translateY(0); /* Het element beweegt naar zijn originele positie */
+      opacity: 0;
+      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
+    }
+
+    .slide-up-quotes-section3.visible {
+      opacity: 1;
+      transform: translateY(-400%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
+    }
+
+
+    /* Container styling */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Flexibele kolommen */
+      gap: 20px; /* Ruimte tussen items */
+      padding: 20px; /* Binnenmarge */
+      background-color: #f9f9f9; /* Achtergrondkleur */
+      border-radius: 10px; /* Ronde hoeken */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Zachte schaduw */
+      height: 600px;
+    }
+
+    /* Categorie-items styling */
+    .category-item {
+      background-color: #ffffff; /* Witte achtergrond */
+      padding: 20px; /* Binnenmarge */
+      text-align: center; /* Tekst gecentreerd */
+      font-size: 16px; /* Tekstgrootte */
+      font-weight: bold; /* Vetgedrukte tekst */
+      border: 2px solid #ddd; /* Rand */
+      border-radius: 8px; /* Ronde hoeken */
+      transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animatie-effect */
+    }
+
+    /* Hover-effect */
+    .category-item:hover {
+      transform: translateY(-5px); /* Beweeg omhoog bij hover */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Vergroot schaduw */
+    }
+
+
+    .categories-section {
+      display: none;
+      opacity: 0;
+      transition: opacity 2s ease;
+    }
+    .categories-section.visible {
+      display: none;
+      opacity: 1;
+      transition: opacity 2s ease;
     }
 
 
   </style>
 </head>
 <body>
-<header>
-  <div class="logo">
-    <h1>The Book of Quotes</h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="quote-of-the-day.html">Quote of the Day</a></li>
-      <li><a href="quotes.html">Quotes</a></li>
-      <li><a href="categories.html">Categories</a></li>
-      <li><a href="quotes-game.html">The Quotes Game</a></li>
-    </ul>
-  </nav>
-</header>
 <main>
   <section class="title-section">
-    <h1>Welcome to The Book of Quotes!</h1>
+    <h1 class="slide-up-title">Welcome to The Book of Quotes!</h1>
     <!-- Citaten Containers rond de titel -->
-    <div class="quote-container" id="quote1">
+    <div class="quote-container slide-left-up " id="quote1">
       <p>"The only way to do great work is to love what you do." - Steve Jobs</p>
     </div>
-    <div class="quote-container" id="quote2">
+    <div class="quote-container slide-right-up" id="quote2">
       <p>"In the end, we will remember not the words of our enemies, but the silence of our friends." - Martin Luther King Jr.</p>
     </div>
-    <div class="quote-container" id="quote3">
+    <div class="quote-container slide-left-down" id="quote3">
       <p>"To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." - Ralph Waldo Emerson</p>
     </div>
-    <div class="quote-container" id="quote4">
+    <div class="quote-container slide-right-down" id="quote4">
       <p>"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill</p>
     </div>
+    <nav class="slide-up-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quote-of-the-day.html">Quote of the Day</a></li>
+        <li><a href="quotes.html">Quotes</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="quotes-game.html">The Quotes Game</a></li>
+      </ul>
+    </nav>
   </section>
 
-  <section>
-    <div class="scroll-container">
-      <div>
-        <h2>Discover Inspirational Quotes</h2>
-        <p>Explore a world of wisdom, humor, and motivation. Find a quote that speaks to you every day!</p>
-        <a href="quote-of-the-day.html">The Quote of the Day</a>
-      </div>
+  <section class="quotes-section-1 slide-up-quotes-section1">
+    <article class="quotes-container-1">
+      <h2>Discover Inspirational Quotes</h2>
+      <p>Explore a world of wisdom, humor, and motivation. Find a quote that speaks to you every day!</p>
+      <a href="quote-of-the-day.html">The Quote of the Day</a>
+    </article>
+  </section>
+
+  <section class="quotes-section-2 slide-up-quotes-section2">
+    <article class="quotes-container-2">
+      <h2>Discover Inspirational Quotes</h2>
+      <p>Explore a world of wisdom, humor, and motivation. Find!</p>
+      <a href="quote-of-the-day.html">The Quote of the Day</a>
+    </article>
+  </section>
+
+  <section class="quotes-section-3 slide-up-quotes-section3">
+    <article class="quotes-container-3">
+      <h2>Discover Inspirational Quotes</h2>
+      <p>Explore </p>
+      <a href="quote-of-the-day.html">The Quote of the Day</a>
+    </article>
+  </section>
+
+  <section class="categories-section">
+    <div class="categories-grid">
+      <div class="category-item">Category 1</div>
+      <div class="category-item">Category 2</div>
+      <div class="category-item">Category 3</div>
+      <div class="category-item">Category 4</div>
+      <div class="category-item">Category 5</div>
+      <div class="category-item">Category 6</div>
     </div>
+
   </section>
 </main>
-
-<script>
-  // Detecteer de scrollrichting en pas de animaties toe
-  let lastScrollTop = 0;
-
-  document.addEventListener("scroll", function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Verkrijg de secties die we willen verbergen en tonen
-    const titleSection = document.querySelector('.title-section');
-    const quoteContainers = document.querySelectorAll('.quote-container');
-
-    // Als we naar beneden scrollen
-    if (currentScroll > lastScrollTop) {
-      titleSection.classList.add('hide-title-section');
-      quoteContainers.forEach(quote => {
-        quote.classList.add('hide-quote-container');
-      });
-    }
-    // Als we naar boven scrollen
-    else {
-      titleSection.classList.remove('hide-title-section');
-      quoteContainers.forEach(quote => {
-        quote.classList.remove('hide-quote-container');
-      });
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll
-  });
-
-  // Observing when the scroll-container comes into view
-  document.addEventListener("DOMContentLoaded", function() {
-    const scrollContainer = document.querySelector('.scroll-container');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Wanneer de container in beeld komt, voeg de klasse toe om te laten schuiven
-          entry.target.classList.add('show-on-scroll');
-        }
-      });
-    }, {
-      threshold: 0.5 // Zorg ervoor dat de container zichtbaar is voor 50% van zijn hoogte
-    });
-
-    observer.observe(scrollContainer);
-  });
-
-
-</script>
 
 <footer>
   <p>&copy; 2024 The Book of Quotes. All rights reserved.</p>
 </footer>
+<script>
+  function updateScrollPercentage() {
+    const scrollPosition = window.scrollY;
+    const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercentage = Math.round((scrollPosition / documentHeight) * 100);
+
+    if (scrollPercentage >= 10) {
+      document.querySelector('.slide-left-up').classList.add('visible');
+      document.querySelector('.slide-right-up').classList.add('visible');
+      document.querySelector('.slide-left-down').classList.add('visible');
+      document.querySelector('.slide-right-down').classList.add('visible');
+      document.querySelector('.slide-up-title').classList.add('visible');
+      document.querySelector('.slide-up-nav').classList.add('visible');
+      document.querySelector('.slide-up-quotes-section1').classList.add('visible');
+
+    }
+    else {
+      document.querySelector('.slide-left-up').classList.remove('visible');
+      document.querySelector('.slide-right-up').classList.remove('visible');
+      document.querySelector('.slide-left-down').classList.remove('visible');
+      document.querySelector('.slide-right-down').classList.remove('visible');
+      document.querySelector('.slide-up-title').classList.remove('visible');
+      document.querySelector('.slide-up-nav').classList.remove('visible');
+      document.querySelector('.slide-up-quotes-section1').classList.remove('visible');
+
+    }
+    if (scrollPercentage >= 20) {
+      document.querySelector('.slide-up-quotes-section1').classList.add('moreup');
+      document.querySelector('.slide-up-quotes-section2').classList.add('visible');
+    }
+    else {
+      document.querySelector('.slide-up-quotes-section1').classList.remove('moreup');
+      document.querySelector('.slide-up-quotes-section2').classList.remove('visible');
+    }
+
+    if (scrollPercentage >= 30) {
+      document.querySelector('.slide-up-quotes-section2').classList.add('moreup');
+      document.querySelector('.slide-up-quotes-section3').classList.add('visible');
+    }
+    else {
+      document.querySelector('.slide-up-quotes-section2').classList.remove('moreup');
+      document.querySelector('.slide-up-quotes-section3').classList.remove('visible');
+    }
+
+    if (scrollPercentage >= 70) {
+      document.querySelector('.categories-section').style.display = 'block';
+      document.querySelector('.slide-up-quotes-section1').style.display = 'none';
+      document.querySelector('.slide-up-quotes-section2').style.display = 'none';
+      document.querySelector('.slide-up-quotes-section3').style.display = 'none';
+
+    }
+    else {
+      document.querySelector('.categories-section').style.display = 'none';
+      document.querySelector('.slide-up-quotes-section1').style.display = 'flex';
+      document.querySelector('.slide-up-quotes-section2').style.display = 'flex';
+      document.querySelector('.slide-up-quotes-section3').style.display = 'flex';
+    }
+
+    if (scrollPercentage >= 80) {
+      document.querySelector('.categories-section').classList.add('visible');
+    }
+    else {
+      document.querySelector('.categories-section').classList.remove('visible');
+    }
+  }
+  window.addEventListener('scroll', updateScrollPercentage);
+</script>
+
+
 </body>
 </html>
