@@ -20,17 +20,22 @@
     </nav>
 </header>
 
-<section id="game-content">
-    <h2>Guess the Author!</h2>
-    <p id="quote-text">Loading quote...</p>
-
-    <div id="options">
-        <!-- Auteurs worden hier toegevoegd -->
+<section id="game-content" class="quote-game-container">
+    <div class="game-header">
+        <span id="lives">❤️❤️❤️</span>
+        <h2>Guess the Author!</h2>
+        <span id="score">⭐ Score: 0</span>
     </div>
-
-    <p id="score">Score: 0</p>
-    <p id="lives">Lives: 3</p>
+    <div id="quote-section">
+        <p id="quote-text">Loading quote...</p>
+    </div>
+    <div id="options" class="option-cards">
+        <div class="option-card">Option 1</div>
+        <div class="option-card">Option 2</div>
+        <div class="option-card">Option 3</div>
+    </div>
 </section>
+
 
 <!-- Pop-up voor meldingen -->
 <div id="popup" class="popup">

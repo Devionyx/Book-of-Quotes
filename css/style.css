@@ -367,14 +367,15 @@ footer p {
 .popup {
     display: none;
     position: fixed;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 20px 40px;
     border-radius: 8px;
-    font-size: 1.5em;
+    border: 3px solid red;
+    font-size: 2em;
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
@@ -525,4 +526,72 @@ h3 {
     height: auto;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.quote-game-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 3px solid #2575fc;
+    padding: 30px;
+    border-radius: 30px;
+    width: 60%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bordercolor 10s ease infinite;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Game header with title, lives, and score */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.game-header h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    margin: 0;
+    text-align: center;
+}
+
+
+#lives, #score {
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+/* Option cards */
+.option-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.option-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-card:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
 }

@@ -3,6 +3,13 @@ let currentQuote = null;
 let score = 0;
 let lives = 3;
 
+
+
+const harts = {
+    1: '❤️',
+    2: '❤️❤️',
+    3: '❤️❤️❤️'
+}
 // Laad de citaten uit het JSON-bestand
 function loadQuotes() {
     console.log("Loading quotes...");
@@ -30,10 +37,11 @@ function loadQuotes() {
 }
 
 // Kies een willekeurige quote en toon deze
+// Kies een willekeurige quote en toon deze
 function nextQuote() {
     if (quotes.length === 0) {
         console.error("No quotes to display.");
-        document.getElementById('quote-text').innerText = "No quotes available.";
+        typeText("No quotes available.")
         return;
     }
 
@@ -41,12 +49,29 @@ function nextQuote() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     currentQuote = quotes[randomIndex];
 
-    // Toont de quote op het scherm
+    // Toont de quote op het scherm (maar met typing animatie)
     console.log("Current Quote: ", currentQuote);  // Voeg log toe om de geladen quote te controleren
-    document.getElementById('quote-text').innerText = `"${currentQuote.text}"`;
+    typeText(currentQuote.text)
 
     // Toon de auteursopties
     displayOptions();
+}
+
+function typeText(fullText) {
+    const quoteContainer = document.getElementById('quote-text');
+    quoteContainer.innerText = ''; // Zorg dat de container leeg is bij het starten van de animatie
+    let index = 0;
+
+    // Functie om één letter per keer te typen
+    function typeCharacter() {
+        if (index < fullText.length) {
+            quoteContainer.textContent += fullText.charAt(index); // Voeg de volgende letter toe aan de tekst
+            index++;  // Verhoog de index voor de volgende letter
+            setTimeout(typeCharacter, 20); // Wacht 50ms per letter voordat de volgende wordt toegevoegd
+        }
+    }
+
+    typeCharacter(); // Start de typing-functie
 }
 
 // Toon de auteursopties (de juiste auteur en twee willekeurige auteurs)
@@ -69,7 +94,8 @@ function displayOptions() {
     optionsContainer.innerHTML = ''; // Maak de vorige opties leeg
 
     authors.forEach(author => {
-        const optionButton = document.createElement('button');
+        const optionButton = document.createElement('div');
+        optionButton.classList.add('option-card');
         optionButton.innerText = author;
         optionButton.onclick = () => checkAnswer(author);
         optionsContainer.appendChild(optionButton);
@@ -87,8 +113,8 @@ function checkAnswer(selectedAuthor) {
     }
 
     // Update de score en levens op het scherm
-    document.getElementById('score').innerText = 'Score: ' + score;
-    document.getElementById('lives').innerText = 'Lives: ' + lives;
+    document.getElementById('score').innerText = '⭐ Score: ' + score;
+    document.getElementById('lives').innerText = harts[lives];
 
     // Als er geen levens meer zijn, reset het spel
     if (lives === 0) {
@@ -105,6 +131,12 @@ function showPopup(message) {
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     popupMessage.innerText = message;
+    if (message == "Correct!") {
+        document.querySelector(".popup").style.border = "3px solid green"
+    }
+    else {
+        document.querySelector(".popup").style.border = "3px solid red"
+    }
 
     // Toon de pop-up met animatie
     popup.classList.add('show');
@@ -112,7 +144,7 @@ function showPopup(message) {
     // Verberg de pop-up na 2 seconden
     setTimeout(() => {
         popup.classList.remove('show');
-    }, 2000);
+    }, 1000);
 }
 
 // Schud de auteursopties (randomize)
@@ -127,8 +159,8 @@ function shuffle(array) {
 function resetGame() {
     score = 0;
     lives = 3;
-    document.getElementById('score').innerText = 'Score: ' + score;
-    document.getElementById('lives').innerText = 'Lives: ' + lives;
+    document.getElementById('score').innerText = '⭐ Score: ' + score;
+    document.getElementById('lives').innerText = harts[lives];
     nextQuote(); // Start het spel opnieuw met een nieuwe quote
 }
 
