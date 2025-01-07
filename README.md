@@ -4,7 +4,7 @@ A Static website made to display famous quotes
 
 
 
-ToDo:
+# ToDo:
 
 1 - Optimize and organize the code
 2 - Make is flexible for iphone and use some media queries
