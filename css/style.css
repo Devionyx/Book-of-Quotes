@@ -1,5 +1,5 @@
 /* Algemene body stijlen */
-body {
+html, body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
@@ -7,13 +7,26 @@ body {
     animation: gradientFade 30s ease infinite;
     color: #ffffff;
     position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Scrollbar verbergen */
+.content-wrapper {
+    flex: 1; /* Laat de inhoud zich uitrekken */
+    display: flex;
+    flex-direction: column;
+}
+.quotes-page-ftr {
+    margin-top: auto;
+}
+
+
 ::-webkit-scrollbar {
     display: none;
 }
-/* Achtergrond animatie */
+
+
 @keyframes gradientFade {
     0% { background-position: 0 50%; }
     25% { background-position: 25% 50%; }
@@ -78,7 +91,6 @@ h2 {
 section {
     margin-bottom: 100px;
 }
-
 
 
 #quote-container {
@@ -254,6 +266,7 @@ footer p {
     margin-bottom: 10px;
     padding: 10px;
     line-height: 1.6;
+    text-decoration: underline;
 }
 
 /* Stijlen voor de quote categorie */
@@ -268,36 +281,81 @@ footer p {
     margin-top: 20px;
     text-align: center;
 }
-
 .filters input,
 .filters select {
     margin: 5px;
     padding: 10px;
     font-size: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Consistente randen */
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparante zwarte achtergrond */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Subtiele schaduw */
+}
+.filters input:focus,
+.filters select:focus {
+    border-color: #0206a1; /* Accentkleur bij focus */
+    outline: none;
 }
 
 #quotes-list {
     margin: 20px auto;
-    margin-bottom: 50px;
     padding: 20px;
     max-width: 800px;
-    background-color: white;
-    border-radius: 8px;
+    border-radius: 15px; /* Meer afgeronde hoeken zoals elders */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Subtiele schaduw */
+    animation: fadeIn 2s ease forwards; /* Gladde fade-in animatie */
 }
-
 .quote {
     margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.4); /* Transparante zwarte achtergrond */
+    border-radius: 10px; /* Consistente rondingen */
+    padding: 15px; /* Ruimte rond de tekst */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Diepte-effect */
+    scale: 1;
+    transition: transform 0.3s ease, max-height 0.3s ease;
+}
+
+.quote:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Lichter effect bij hover */
+    transform: translateY(-5px); /* Subtiele beweging */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Meer nadruk */
+    transition: all 0.3s ease; /* Soepel effect */
+}
+
+.quote.open {
+    transform: scale(1.1); /* Vergroot bij klikken */
+    max-height: 300px; /* Pas aan afhankelijk van de details */
+    border: 2px solid #6a11cb;
+    background-color: black;
+}
+
+.quote.open p{
+    text-decoration: none;
+}
+
+.quote-details {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.quote.open .quote-details {
+    display: block; /* Toon details bij openen */
 }
 
 .quote-text {
-    font-size: 18px;
+    font-size: 1.2rem;
     font-style: italic;
+    color: white; /* Zorgt ervoor dat tekst duidelijk blijft */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtiele gloed zoals elders */
+    line-height: 1.6; /* Betere leesbaarheid */
+}
+.quote-category {
+    font-size: 0.9rem;
+    color: #ccc; /* Gebruik een lichtere kleur voor categorieën */
+    margin-top: 10px;
 }
 
-.quote-category {
-    font-size: 14px;
-    color: #888;
-}
 
 .pagination {
     margin-top: 20px;
@@ -310,17 +368,22 @@ footer p {
     padding: 10px 20px;
     margin: 0 10px;
     font-size: 16px;
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.6); /* Transparant zwart zoals elders */
     color: white;
-    border: none;
-    border-radius: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Consistente randen */
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-
+.pagination button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lichter effect bij hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Nadruk bij hover */
+}
 .pagination button:disabled {
-    background-color: #ccc;
+    background-color: rgba(255, 255, 255, 0.1);
     cursor: not-allowed;
 }
+
 
 #pagination-container {
     display: flex;
@@ -520,12 +583,12 @@ h3 {
     margin: 10px 0;
 }
 
-#author-image {
-    margin-top: 20px;
-    max-width: 200px;
+.author-image {
+    max-width: 180px;
+    max-height: 320px;
+    margin: 10px;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -595,3 +658,4 @@ h3 {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
 }
+

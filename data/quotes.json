@@ -69,5 +69,12 @@
     "author": "Ralph Waldo Emerson",
     "category": "Wisdom",
     "description": "A reflection on the importance of inner strength and character."
+  },
+  {
+    "id": 11,
+    "text": "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "author": "Ralph Waldo Emerson",
+    "category": "Wisdom",
+    "description": "A reflection on the importance of inner strength and character."
   }
 ]

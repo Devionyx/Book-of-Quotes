@@ -8,7 +8,7 @@ function loadQuotes() {
         .then(response => response.json())
         .then(data => {
             quotes = data;
-            filteredQuotes = quotes; // Initialiseer de gefilterde quotes als alle citaten
+            filteredQuotes = quotes;
             const category = getCategoryFromUrl();
             if (category) {
                 filteredQuotes = quotes.filter(quote => quote.category === category);
@@ -21,7 +21,7 @@ function loadQuotes() {
 
 function displayQuotes() {
     const quotesContainer = document.getElementById('quotes-list');
-    quotesContainer.innerHTML = ''; // Maak de container leeg
+    quotesContainer.innerHTML = '';
 
     const start = (currentPage - 1) * quotesPerPage;
     const end = start + quotesPerPage;
@@ -31,20 +31,31 @@ function displayQuotes() {
         const quoteDiv = document.createElement('div');
         quoteDiv.classList.add('quote');
 
-        // Voeg een link toe naar de quote detailpagina met het id van de quote als URL parameter
-        const quoteLink = document.createElement('a');
-        quoteLink.href = `quote-detail.html?id=${quote.id}`;
-        quoteLink.classList.add('quote-link');
+        const quoteLink = document.createElement('div');
 
+        const authorImageHTML = quote.authorImage ? `<img src="${quote.authorImage}" alt="Image of ${quote.author}" class="author-image">` : '';
+
+        quoteLink.style.display = "flex";
         quoteLink.innerHTML = `
-            <p class="quote-text">"${quote.text}" – ${quote.author}</p>
-            <p class="quote-category">Category: ${quote.category}</p>
+            <div>
+                <p class="quote-category">${quote.author}</p>
+                <p class="quote-text">"${quote.text}" – ${quote.author}</p>
+                <div class="quote-details hidden">
+                    <p class="quote-category">Author: ${quote.author}</p>
+                    <p class="quote-category">Category: ${quote.category}</p>
+                    <p class="quote-category"> Description: ${quote.description || "No description available."}</p>
+                </div>
+            </div>
+            <div class="quote-details hidden">
+                ${authorImageHTML}
+            </div>
         `;
 
-        quoteDiv.appendChild(quoteLink); // Voeg de link toe aan de quote div
+        quoteDiv.appendChild(quoteLink);
         quotesContainer.appendChild(quoteDiv);
     });
 
+    setupQuoteClickEvents();
     updatePaginationButtons();
 }
 
@@ -69,7 +80,6 @@ function updatePaginationButtons() {
     document.getElementById('prev-btn').disabled = currentPage === 1;
     document.getElementById('next-btn').disabled = currentPage === totalPages;
 
-    // Verberg de paginatie als er minder dan 10 citaten zijn
     const paginationContainer = document.getElementById('pagination-container');
     if (filteredQuotes.length <= quotesPerPage) {
         paginationContainer.style.display = 'none';
@@ -126,22 +136,17 @@ window.onload = loadQuotes;
 
 
 
-// Functie om de Quote of the Day te tonen, op basis van de datum
 function loadQuoteOfTheDay() {
     fetch('data/quotes.json')
         .then(response => response.json())
         .then(quotes => {
-            // Haal de huidige datum op (jaar, maand, dag)
             const today = new Date();
-            const dayOfYear = today.getFullYear() * 1000 + today.getMonth() * 30 + today.getDate(); // Combineer jaar, maand en dag
+            const dayOfYear = today.getFullYear() * 1000 + today.getMonth() * 30 + today.getDate();
 
-            // Bereken de index van de quote op basis van de dag van het jaar
-            const quoteIndex = dayOfYear % quotes.length; // Dit zorgt ervoor dat de quote per dag hetzelfde is
+            const quoteIndex = dayOfYear % quotes.length;
 
-            // Kies de quote van de dag
             const quoteOfTheDay = quotes[quoteIndex];
 
-            // Start het type-effect
             typeText(`"${quoteOfTheDay.text}" – ${quoteOfTheDay.author}`);
         })
         .catch(error => {
@@ -151,32 +156,42 @@ function loadQuoteOfTheDay() {
 
 function typeText(fullText) {
     const quoteContainer = document.getElementById('quote-container');
-    quoteContainer.innerHTML = ''; // Zorg dat de container leeg is
+    quoteContainer.innerHTML = '';
     let index = 0;
 
     function typeCharacter() {
         if (index < fullText.length) {
-            quoteContainer.textContent += fullText.charAt(index); // Voeg de volgende letter toe
+            quoteContainer.textContent += fullText.charAt(index);
             index++;
-            setTimeout(typeCharacter, 50); // Typ snelheid (50ms per letter)
+            setTimeout(typeCharacter, 50);
         }
     }
 
-    typeCharacter(); // Start de typing-functie
+    typeCharacter();
+}
+
+
+function setupQuoteClickEvents() {
+    const quotes = document.querySelectorAll('.quote');
+
+    quotes.forEach(quote => {
+        quote.addEventListener('click', () => {
+            // Verwijder 'open' van andere quotes als je maar één tegelijk wilt openen
+            document.querySelectorAll('.quote').forEach(q => q.classList.remove('open'));
+
+            // Voeg 'open' toe aan de geklikte quote
+            quote.classList.toggle('open');
+        });
+    });
 }
 
 
 
-// Laad de citaten bij het laden van de pagina
-
-
-
-
-
-
-// Laad de juiste content afhankelijk van de pagina
 if (document.getElementById('quotes')) {
-    window.onload = loadQuotes;  // Voor de quotes pagina
+    window.onload = function () {
+        loadQuotes();
+        setupQuoteClickEvents();
+    };
 } else if (document.getElementById('quote-container')) {
-    window.onload = loadQuoteOfTheDay;  // Voor de quote of the day pagina
+    window.onload = loadQuoteOfTheDay;
 }

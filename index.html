@@ -139,6 +139,7 @@
       100% {
         opacity: 1;
         transform: translateX(-130%) translateY(-190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        display: none;
       }
     }
     @keyframes rightupout {
@@ -150,6 +151,7 @@
       100% {
         opacity: 1;
         transform: translateX(130%) translateY(-190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        display: none;
       }
     }
 
@@ -162,6 +164,7 @@
       100% {
         opacity: 1;
         transform: translateX(130%) translateY(190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        display: none;
       }
     }
     @keyframes leftdownout {
@@ -173,12 +176,14 @@
       100% {
         opacity: 1;
         transform: translateX(-130%) translateY(190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        display: none;
       }
     }
 
     /* Fade-in en beweging animatie */
     @keyframes fadeInMove {
       0% {
+        display: block;
         opacity: 0;
         transform: translateY(20px);
       }
