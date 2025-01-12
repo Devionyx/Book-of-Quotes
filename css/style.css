@@ -48,6 +48,7 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+    justify-content: center;
     padding: 0;
     margin: 0;
     gap: 10px;
@@ -629,12 +630,13 @@ h3 {
 
 /* Option cards */
 .option-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 20px;
 }
+
 
 .option-card {
     background-color: white;
@@ -748,6 +750,48 @@ h3 {
     nav ul li a:hover {
         background-color: rgba(255, 255, 255, 0.2);
         }
+
+}
+
+@media (max-width: 768px) {
+    .quote-of-the-day-container {
+        width: 90%;
+    }
+
+
+    #quote-container {
+        text-align: center;
+    }
+    .quote.open .quote-details img{
+        display: none; /* Toon details bij openen */
+    }
+
+    html, body {
+        background-size: 700% 700%;
+    }
+
+    .categories-container {
+        margin-bottom: 200px;
+    }
+
+    .quote-game-container {
+        width: 80%;
+    }
+
+    .quote-of-the-day-footer {
+    margin-top: 200px;
+    }
+
+    .option-cards{
+        gap: 2px;
+        padding: 0;
+
+
+    .option-card {
+        padding: 6px;
+
+    }
+
 
 }
 

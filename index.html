@@ -41,6 +41,7 @@
       display: flex;
       flex-wrap: wrap;
       list-style: none;
+      justify-content: center;
       padding: 0;
       margin: 0;
       gap: 10px;
@@ -580,6 +581,62 @@
       }
 
     }
+
+    @media (max-width: 768px) {
+      #quote1 {
+        display: none;
+      }
+
+      #quote2 {
+        display: none;
+      }
+
+      #quote3 {
+        display: none;
+      }
+
+      #quote4 {
+        display: none;
+      }
+      footer {
+        margin-top: 100px;
+      }
+      .slide-up-title.visible {
+        transform: translateY(-200%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      }
+      .slide-up-nav.visible {
+        transform: translateY(-410%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      }
+
+      .slide-up-quotes-section1.visible {
+        transform: translateY(-120%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      }
+
+      .slide-up-quotes-section1.moreup {
+        transform: translateY(-240%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      }
+
+      .slide-up-quotes-section2.visible {
+        opacity: 1;
+        transform: translateY(-200%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
+      }
+      .slide-up-quotes-section2.moreup {
+        opacity: 0;
+        transform: translateY(-300%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
+      }
+
+      .slide-up-quotes-section3.visible {
+        transform: translateY(-300%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+      }
+
+
+
+    }
+
+
+
   </style>
 </head>
 <body>
