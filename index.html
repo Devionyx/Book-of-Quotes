@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
+      background: linear-gradient(135deg, #ffffff 0%, #7c7fc1 100%);
       background-size: 400% 400%;
       animation: gradientFade 30s ease infinite;
       color: #ffffff;
@@ -30,15 +30,7 @@
       100% { background-position: 0 50%; }
     }
 
-    /* Logo */
-    .logo h1 {
-      font-size: 2rem;
-      margin: 0;
-      color: #ffffff;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-    }
 
-    /* Navigatie menu */
     nav {
       display: flex;
       justify-content: center;
@@ -70,7 +62,6 @@
     }
 
     nav ul li a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
       transform: translateY(-5px);
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
     }
@@ -89,9 +80,8 @@
     /* Titels */
     h1 {
       font-size: 4rem;
-      color: #ffffff;
+      color: black;
       text-align: center;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
       margin: 0;
     }
 
@@ -507,7 +497,7 @@
       flex-direction: column; /* Verticale structuur */
       justify-content: center;
       align-items: center;
-      background: rgba(255, 255, 255, 0.1); /* Licht doorzichtige achtergrond */
+      background: white; /* Licht doorzichtige achtergrond */
       padding: 20px; /* Binnenmarge */
       padding-top: 40px;
       padding-bottom: 40px;
@@ -517,7 +507,7 @@
       text-decoration: none;
       border: 2px solid rgba(255, 255, 255, 0.2); /* Rand */
       border-radius: 10px; /* Ronde hoeken */
-      color: #ffffff; /* Witte tekst */
+      color: black; /* Witte tekst */
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Diepte-effect */
       transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease; /* Animatie-effect */
     }
@@ -552,7 +542,44 @@
       transition: opacity 2s ease;
     }
 
+    @media (prefers-color-scheme: dark) {
+      html, body {
+        color: #ffffff;
+        background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
+        animation: gradientFade 30s ease infinite;
+        background-size: 400% 400%;
+      }
 
+
+      h2 {
+        color: white;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+      }
+
+      h1 {
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+      }
+
+
+      .filters input,
+      .filters select {
+        border: 2px solid rgba(255, 255, 255, 0.2); /* Consistente randen */
+        background-color: rgba(0, 0, 0, 0.6); /* Transparante zwarte achtergrond */
+        color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Subtiele schaduw */
+      }
+
+      nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .category-item {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+      }
+
+    }
   </style>
 </head>
 <body>
