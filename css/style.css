@@ -2,10 +2,10 @@
 html, body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #7c7fc1 100%);
     background-size: 400% 400%;
     animation: gradientFade 30s ease infinite;
-    color: #ffffff;
+    color: #000000;
     position: relative;
     height: 100%;
     display: flex;
@@ -69,23 +69,20 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
 }
 h1 {
     font-size: 4rem;
-    color: #ffffff;
+    color: black;
     text-align: center;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
     margin: 0;
 }
 
 h2 {
     font-size: 3rem;
-    color: #ffffff;
+    color: black;
     text-align: center;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
     margin: 0;
 }
 section {
@@ -118,7 +115,7 @@ section {
 
 
 .quote-of-the-day-container {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: white;
     border: 3px solid #2575fc;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -286,11 +283,11 @@ footer p {
     margin: 5px;
     padding: 10px;
     font-size: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Consistente randen */
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Consistente randen */
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.6); /* Transparante zwarte achtergrond */
-    color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Subtiele schaduw */
+    background-color: rgba(255, 255, 255, 0.6); /* Transparante zwarte achtergrond */
+    color: black;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4); /* Subtiele schaduw */
 }
 .filters input:focus,
 .filters select:focus {
@@ -304,11 +301,12 @@ footer p {
     max-width: 800px;
     border-radius: 15px; /* Meer afgeronde hoeken zoals elders */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Subtiele schaduw */
+    background-color: white;
     animation: fadeIn 2s ease forwards; /* Gladde fade-in animatie */
 }
 .quote {
     margin-bottom: 20px;
-    background-color: rgba(0, 0, 0, 0.4); /* Transparante zwarte achtergrond */
+    background-color: #cccccc; /* Transparante zwarte achtergrond */
     border-radius: 10px; /* Consistente rondingen */
     padding: 15px; /* Ruimte rond de tekst */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Diepte-effect */
@@ -317,7 +315,7 @@ footer p {
 }
 
 .quote:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Lichter effect bij hover */
+    background-color: #ffffff; /* Lichter effect bij hover */
     transform: translateY(-5px); /* Subtiele beweging */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Meer nadruk */
     transition: all 0.3s ease; /* Soepel effect */
@@ -326,8 +324,7 @@ footer p {
 .quote.open {
     transform: scale(1.1); /* Vergroot bij klikken */
     max-height: 300px; /* Pas aan afhankelijk van de details */
-    border: 2px solid #6a11cb;
-    background-color: black;
+    background-color: #cccccc;
 }
 
 .quote.open p{
@@ -346,13 +343,13 @@ footer p {
 .quote-text {
     font-size: 1.2rem;
     font-style: italic;
-    color: white; /* Zorgt ervoor dat tekst duidelijk blijft */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Subtiele gloed zoals elders */
+    color: black; /* Zorgt ervoor dat tekst duidelijk blijft */
+    text-shadow: 0 0 10px #cccccc; /* Subtiele gloed zoals elders */
     line-height: 1.6; /* Betere leesbaarheid */
 }
 .quote-category {
     font-size: 0.9rem;
-    color: #ccc; /* Gebruik een lichtere kleur voor categorieën */
+    color: #333333; /* Gebruik een lichtere kleur voor categorieën */
     margin-top: 10px;
 }
 
@@ -475,8 +472,8 @@ footer p {
 }
 
 .category-card {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    background-color: white;
+    color: black;
     border: 3px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     overflow: hidden;
@@ -507,7 +504,7 @@ footer p {
 
 .category-card a {
     text-decoration: none;
-    color: #fff;
+    color: black;
 }
 
 
@@ -520,7 +517,7 @@ h3 {
 .description {
     margin-top: 20px;
     font-size: 1rem;
-    color: #fff;
+    color: black;
     text-align: center;
     font-style: italic;
     min-height: 20px;
@@ -594,7 +591,7 @@ h3 {
 
 
 .quote-game-container {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: white;
     border: 3px solid #2575fc;
     padding: 30px;
     border-radius: 30px;
@@ -618,7 +615,7 @@ h3 {
 
 .game-header h2 {
     font-size: 2rem;
-    color: #fff;
+    color: black;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
     margin: 0;
     text-align: center;
@@ -627,7 +624,7 @@ h3 {
 
 #lives, #score {
     font-size: 1.2rem;
-    color: #fff;
+    color: black;
 }
 
 /* Option cards */
@@ -640,8 +637,8 @@ h3 {
 }
 
 .option-card {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
+    background-color: white;
+    color: black;
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     padding: 20px;
@@ -657,5 +654,100 @@ h3 {
     background-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+
+@media (prefers-color-scheme: dark) {
+    html, body {
+        color: #ffffff;
+        background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
+        animation: gradientFade 30s ease infinite;
+        background-size: 400% 400%;
+    }
+
+    .quote {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .quote-text {
+        color: white;
+    }
+
+    .quote-category {
+        color: #ccc;
+    }
+
+    .quote.open {
+        border: 2px solid #6a11cb;
+        background-color: black;
+    }
+
+    .quote:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    #quotes-list {
+        background-color: transparent;
+    }
+
+    .quote.open:hover {
+        background-color: black;
+    }
+
+    h2 {
+        color: white;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+
+    h1 {
+        color: #ffffff;
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+    .quote-of-the-day-container {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .category-card {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+    }
+
+    .description {
+        color: #fff;
+    }
+
+    .category-card a {
+        color: #fff;
+    }
+
+    .quote-game-container {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .game-header h2 {
+        color: #fff;
+    }
+
+    #lives, #score {
+        color: #fff;
+    }
+
+    .option-card {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+    }
+
+    .filters input,
+    .filters select {
+        border: 2px solid rgba(255, 255, 255, 0.2); /* Consistente randen */
+        background-color: rgba(0, 0, 0, 0.6); /* Transparante zwarte achtergrond */
+        color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Subtiele schaduw */
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        }
+
 }
 
