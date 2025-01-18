@@ -8,13 +8,13 @@ Welcome to **The Book of Quotes**, a static website dedicated to showcasing a va
 
 - **Daily Inspiration**: Get a new quote delivered every day to keep you motivated and inspired.
 
-- **User Contributions**: Share your favorite quotes! Users can submit their own quotes for review and potential inclusion in the collection.
-
 - **Interactive Design**: A simple and beautiful layout with an intuitive interface, making it easy to explore and discover new quotes.
 
 - **Search Functionality**: Easily find quotes by keyword, author, or category.
 
 ## Future Features:
+
+- **User Contributions**: Share your favorite quotes! Users can submit their own quotes for review and potential inclusion in the collection.
 
 - **Quote-of-the-Day Notifications**: Receive daily notifications with a new inspirational quote.
 
