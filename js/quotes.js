@@ -99,6 +99,12 @@ function filterByCategory() {
     displayQuotes();
 }
 
+function addeventslistenersforquotes() {
+    document.getElementById('search-input').addEventListener("input", searchQuotes)
+    document.getElementById('search-option').addEventListener("change", searchQuotes)
+    document.getElementById('category-filter').addEventListener("change", filterByCategory)
+}
+
 function searchQuotes() {
     const searchTerm = document.getElementById('search-input').value.toLowerCase();
     const searchOption = document.getElementById('search-option').value;
@@ -185,12 +191,11 @@ function setupQuoteClickEvents() {
     });
 }
 
-
-
-if (document.getElementById('quotes')) {
+if (document.getElementById('quotes-list')) {
     window.onload = function () {
         loadQuotes();
         setupQuoteClickEvents();
+        addeventslistenersforquotes()
     };
 } else if (document.getElementById('quote-container')) {
     window.onload = loadQuoteOfTheDay;

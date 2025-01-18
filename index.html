@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basis metagegevens -->
+  <!-- Basic meta information: charset, viewport settings, and title -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Book of Quotes - Home</title>
@@ -9,10 +9,10 @@
   <meta name="author" content="The Book of Quotes Team">
   <meta name="keywords" content="quotes, inspirational quotes, motivational quotes, love quotes, success quotes, wisdom quotes, humor quotes">
 
-  <!-- Canonical link -->
+  <!-- Canonical link: informs search engines of the preferred URL for this page -->
   <link rel="canonical" href="https://bookofquotes.eu/">
 
-  <!-- Open Graph metagegevens (voor sociale media) -->
+  <!-- Open Graph meta data: improves social media sharing and visibility -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="The Book of Quotes - Home">
   <meta property="og:description" content="Discover inspiring quotes on love, success, wisdom, and humor. Your daily dose of motivation starts here.">
@@ -21,671 +21,64 @@
   <meta property="og:site_name" content="The Book of Quotes">
   <meta property="og:locale" content="en_US">
 
-  <!-- Robots metagegevens -->
+  <!-- Robots meta tags: instruct search engines to index this page and follow the links -->
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
 
-  <!-- Favicon -->
+  <!-- Favicon and Apple Touch Icon for mobile devices -->
   <link rel="icon" href="https://bookofquotes.eu/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="https://bookofquotes.eu/images/apple-touch-icon.png">
 
-  <!-- Extra metagegevens voor veiligheid en snelheid -->
+  <!-- Security and performance-related meta tags -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; style-src 'self' 'unsafe-inline';">
 
-  <script src="js/home.js" ></script>
-  <style>
-    /* Algemene styling */
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #ffffff 0%, #7c7fc1 100%);
-      background-size: 400% 400%;
-      animation: gradientFade 30s ease infinite;
-      color: #ffffff;
-      position: relative;
-    }
-
-    /* Scrollbar verbergen */
-    ::-webkit-scrollbar {
-      display: none;
-    }
-
-    /* Achtergrond animatie */
-    @keyframes gradientFade {
-      0% { background-position: 0 50%; }
-      25% { background-position: 25% 50%; }
-      50% { background-position: 50% 50%; }
-      75% { background-position: 75% 50%; }
-      100% { background-position: 0 50%; }
-    }
-
-
-    nav {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      list-style: none;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-      gap: 10px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      border: 2px solid rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-      padding: 15px 20px;
-      font-size: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-    }
-
-    /* Titelsectie */
-    .title-section {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-      transition: transform 1s ease, opacity 1s ease;
-    }
-    /* Titels */
-    h1 {
-      font-size: 4rem;
-      color: black;
-      text-align: center;
-      margin: 0;
-    }
-
-    .quote-container {
-      position: absolute;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      padding: 15px;
-      border-radius: 10px;
-      max-width: 80%;
-      width: 350px;
-      text-align: center;
-      font-size: 1.2rem;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-      opacity: 0;
-
-    }
-
-    #quote1 {
-      top: 20%;
-      left: 5%;
-    }
-
-    #quote2 {
-      top: 20%;
-      right: 5%;
-    }
-
-    #quote3 {
-      bottom: 20%;
-      left: 5%;
-    }
-
-    #quote4 {
-      bottom: 20%;
-      right: 5%;
-    }
-
-    @keyframes leftupout {
-      0% {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-        transition: transform 3s ease;
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(-130%) translateY(-190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-        display: none;
+  <!-- Structured data: Adds a JSON-LD script for search engines to understand the website's context -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "The Book of Quotes",
+      "url": "https://bookofquotes.eu",
+      "description": "Discover inspiring quotes on love, success, wisdom, and humor.",
+      "author": {
+        "@type": "Organization",
+        "name": "The Book of Quotes Team"
       }
     }
-    @keyframes rightupout {
-      0% {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-        transition: transform 3s ease;
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(130%) translateY(-190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-        display: none;
-      }
-    }
+  </script>
 
-    @keyframes rightdownout {
-      0% {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-        transition: transform 3s ease;
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(130%) translateY(190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-        display: none;
-      }
-    }
-    @keyframes leftdownout {
-      0% {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-        transition: transform 3s ease;
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(-130%) translateY(190%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-        display: none;
-      }
-    }
+  <!-- Linking to external CSS for styling -->
+  <link rel="stylesheet" href="css/style.css">
 
-    /* Fade-in en beweging animatie */
-    @keyframes fadeInMove {
-      0% {
-        display: block;
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      50% {
-        opacity: 0.5;
-        transform: translateY(-10px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes floatEffect1 {
-      0% {
-        transform: translate(0, 0); /* Beginpunt */
-      }
-      25% {
-        transform: translate(40px, -40px); /* Beweegt naar rechtsboven */
-      }
-      50% {
-        transform: translate(80px, 0); /* Beweegt naar rechts */
-      }
-      75% {
-        transform: translate(40px, 40px); /* Beweegt naar rechtsonder */
-      }
-      100% {
-        transform: translate(0, 0); /* Terug naar beginpunt */
-      }
-    }
-
-    @keyframes floatEffect2 {
-      0% {
-        transform: translate(0, 0); /* Beginpunt */
-      }
-      25% {
-        transform: translate(-40px, -40px); /* Beweegt naar linksboven */
-      }
-      50% {
-        transform: translate(-80px, 0); /* Beweegt naar links */
-      }
-      75% {
-        transform: translate(-40px, 40px); /* Beweegt naar linksonder */
-      }
-      100% {
-        transform: translate(0, 0); /* Terug naar beginpunt */
-      }
-    }
-
-    @keyframes floatEffect3 {
-      0% {
-        transform: translate(0, 0); /* Beginpunt */
-      }
-      25% {
-        transform: translate(50px, 50px); /* Beweegt naar rechts beneden */
-      }
-      50% {
-        transform: translate(100px, 100px); /* Beweegt naar verder naar rechts beneden */
-      }
-      75% {
-        transform: translate(50px, 150px); /* Beweegt verder naar rechtsonder */
-      }
-      100% {
-        transform: translate(0, 0); /* Terug naar beginpunt */
-      }
-    }
-
-    @keyframes floatEffect4 {
-      0% {
-        transform: translate(0, 0); /* Beginpunt */
-      }
-      25% {
-        transform: translate(-50px, 100px); /* Beweegt naar links beneden */
-      }
-      50% {
-        transform: translate(-100px, 100px); /* Beweegt naar verder naar links beneden */
-      }
-      75% {
-        transform: translate(-50px, 50px); /* Beweegt verder naar linksonder */
-      }
-      100% {
-        transform: translate(0, 0); /* Terug naar beginpunt */
-      }
-    }
-
-
-    .quotes-section-1 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .quotes-section-2 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .quotes-section-3 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-
-
-    .quotes-container-1 {
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
-      width: 60%;
-      display: flex;
-      justify-content: space-around;
-      gap: 1em;
-      align-items: center;
-      flex-direction: column;
-    }
-    .quotes-container-1 h2 {
-      font-size: 2em; /* Verhoogt de grootte van de titel */
-    }
-
-    .quotes-container-1 p {
-      font-size: 1.2em; /* Verhoogt de grootte van de paragraaftekst */
-    }
-
-    .quotes-container-1 a {
-      font-size: 1.2em; /* Verhoogt de grootte van de linktekst */
-    }
-
-
-    .quotes-container-2 {
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
-      width: 60%;
-      display: flex;
-      justify-content: space-around;
-      gap: 1em;
-      align-items: center;
-      flex-direction: column;
-
-    }
-
-    .quotes-container-2 h2 {
-      font-size: 2em; /* Verhoogt de grootte van de titel */
-    }
-
-    .quotes-container-2 p {
-      font-size: 1.2em; /* Verhoogt de grootte van de paragraaftekst */
-    }
-
-    .quotes-container-2 a {
-      font-size: 1.2em; /* Verhoogt de grootte van de linktekst */
-    }
-
-    .quotes-container-3 {
-      padding: 20px;
-      margin: 20px;
-      border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
-      width: 60%;
-      display: flex;
-      justify-content: space-around;
-      gap: 1em;
-      align-items: center;
-      flex-direction: column;
-
-    }
-
-    .quotes-container-3 h2 {
-      font-size: 2em; /* Verhoogt de grootte van de titel */
-    }
-
-    .quotes-container-3 p {
-      font-size: 1.2em; /* Verhoogt de grootte van de paragraaftekst */
-    }
-
-    .quotes-container-3 a {
-      font-size: 1.2em; /* Verhoogt de grootte van de linktekst */
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.7);
-      border-top: 2px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
-      margin-top: 40px;
-    }
-
-    footer p {
-      font-size: 0.9rem;
-      color: #fff;
-      margin: 0;
-    }
-
-
-    .slide-left-up {
-      animation: fadeInMove 3s ease-in-out forwards, floatEffect1 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-    .slide-left-up.visible {
-      animation: leftupout 1s ease-out forwards;
-      opacity: 1;
-    }
-
-    .slide-right-up {
-      animation: fadeInMove 3s ease-in-out forwards, floatEffect2 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-    .slide-right-up.visible {
-      animation: rightupout 1s ease-out forwards;
-      opacity: 1;
-    }
-
-    .slide-left-down {
-      animation: fadeInMove 3s ease-in-out forwards, floatEffect3 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-    .slide-left-down.visible {
-      animation: leftdownout 1s ease-out forwards;
-      opacity: 1;
-    }
-
-    .slide-right-down {
-      animation: fadeInMove 3s ease-in-out forwards, floatEffect4 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-    .slide-right-down.visible {
-      animation: rightdownout 1s ease-out forwards;
-      opacity: 1;
-    }
-
-    .slide-up-title {
-      transform: translateY(0); /* Het element beweegt naar zijn originele positie */
-      transition: transform 1s ease; /* De duur en de overgangseffecten */
-    }
-
-    /* Stijl wanneer het element moet verschijnen (sliden van links) */
-    .slide-up-title.visible {
-      transform: translateY(-400%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      transition: transform 1s ease; /* De duur en de overgangseffecten */
-    }
-    .slide-up-nav{
-      transform: translateY(0); /* Het element beweegt naar zijn originele positie */
-      transition: transform 1s ease; /* De duur en de overgangseffecten */
-    }
-
-    /* Stijl wanneer het element moet verschijnen (sliden van links) */
-    .slide-up-nav.visible {
-      transform: translateY(-550%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      transition: transform 1s ease; /* De duur en de overgangseffecten */
-    }
-
-    .slide-up-quotes-section1{
-      transform: translateY(0); /* Het element beweegt naar zijn originele positie */
-      opacity: 0;
-      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
-    }
-
-    /* Stijl wanneer het element moet verschijnen (sliden van links) */
-    .slide-up-quotes-section1.visible {
-      opacity: 1;
-      transform: translateY(-200%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
-    }
-
-    .slide-up-quotes-section1.moreup {
-      opacity: 0;
-      transform: translateY(-400%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
-    }
-
-
-    .slide-up-quotes-section2{
-      transform: translateY(0); /* Het element beweegt naar zijn originele positie */
-      opacity: 0;
-      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
-    }
-
-    .slide-up-quotes-section2.visible {
-      opacity: 1;
-      transform: translateY(-300%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
-    }
-    .slide-up-quotes-section2.moreup {
-      opacity: 0;
-      transform: translateY(-400%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
-    }
-
-    .slide-up-quotes-section3{
-      transform: translateY(0); /* Het element beweegt naar zijn originele positie */
-      opacity: 0;
-      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
-    }
-
-    .slide-up-quotes-section3.visible {
-      opacity: 1;
-      transform: translateY(-400%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
-    }
-
-
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexibele kolommen */
-      gap: 20px; /* Ruimte tussen items */
-      padding: 40px; /* Binnenmarge */
-      background-color: rgba(0, 0, 0, 0); /* Volledig doorzichtig */
-      border-radius: 12px; /* Ronde hoeken */
-      margin: 40px auto; /* Ruimte rondom */
-      height: 500px; /*
-      width: 80%; /* Maximaal breedte */
-      max-width: 1200px; /* Beperkte breedte voor grote schermen */
-      align-items: start; /* Items uitlijnen aan de bovenkant */
-      animation: fadeInMove 1.5s ease-out;
-    }
-
-    /* Categorie-items styling */
-    .category-item {
-      display: flex;
-      flex-direction: column; /* Verticale structuur */
-      justify-content: center;
-      align-items: center;
-      background: white; /* Licht doorzichtige achtergrond */
-      padding: 20px; /* Binnenmarge */
-      padding-top: 40px;
-      padding-bottom: 40px;
-      text-align: center; /* Tekst gecentreerd */
-      font-size: 1.1rem; /* Tekstgrootte */
-      font-weight: bold; /* Vetgedrukte tekst */
-      text-decoration: none;
-      border: 2px solid rgba(255, 255, 255, 0.2); /* Rand */
-      border-radius: 10px; /* Ronde hoeken */
-      color: black; /* Witte tekst */
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Diepte-effect */
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease; /* Animatie-effect */
-    }
-
-    /* Hover-effect */
-    .category-item:hover {
-      transform: translateY(-10px) scale(1.05); /* Beweeg omhoog en vergroot bij hover */
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6); /* Vergroot schaduw */
-      border: 2px solid #8a2be2; /* Paars gekleurde rand bij hover */
-    }
-
-    .category-item p {
-      margin: 10px 0 0; /* Ruimte bovenaan */
-      font-size: 0.9rem; /* Kleiner subtiele tekst */
-      font-weight: 300; /* Minder vet voor secundaire tekst */
-      color: #ccc; /* Subtiele kleur voor beschrijvingen */
-    }
-
-    .category-item h3 {
-      font-size: 1.3rem; /* Grotere titeltekst */
-      margin: 0 0 10px; /* Ruimte onder de titel */
-      color: #fff; /* Heldere kleur voor de titel */
-    }
-    .categories-section {
-      display: none;
-      opacity: 0;
-      transition: opacity 2s ease;
-    }
-    .categories-section.visible {
-      display: none;
-      opacity: 1;
-      transition: opacity 2s ease;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      html, body {
-        color: #ffffff;
-        background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
-        animation: gradientFade 30s ease infinite;
-        background-size: 400% 400%;
-      }
-
-
-      h2 {
-        color: white;
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-      }
-
-      h1 {
-        color: #ffffff;
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-      }
-
-
-      .filters input,
-      .filters select {
-        border: 2px solid rgba(255, 255, 255, 0.2); /* Consistente randen */
-        background-color: rgba(0, 0, 0, 0.6); /* Transparante zwarte achtergrond */
-        color: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Subtiele schaduw */
-      }
-
-      nav ul li a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-      }
-
-      .category-item {
-        background: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
-      }
-
-    }
-
-    @media (max-width: 768px) {
-      #quote1 {
-        display: none;
-      }
-
-      #quote2 {
-        display: none;
-      }
-
-      #quote3 {
-        display: none;
-      }
-
-      #quote4 {
-        display: none;
-      }
-      footer {
-        margin-top: 100px;
-      }
-      .slide-up-title.visible {
-        transform: translateY(-200%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      }
-      .slide-up-nav.visible {
-        transform: translateY(-410%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      }
-
-      .slide-up-quotes-section1.visible {
-        transform: translateY(-120%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      }
-
-      .slide-up-quotes-section1.moreup {
-        transform: translateY(-240%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      }
-
-      .slide-up-quotes-section2.visible {
-        opacity: 1;
-        transform: translateY(-200%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-        transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
-      }
-      .slide-up-quotes-section2.moreup {
-        opacity: 0;
-        transform: translateY(-300%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-        transition: transform 1s ease, opacity 1s ease; /* De duur en de overgangseffecten */
-      }
-
-      .slide-up-quotes-section3.visible {
-        transform: translateY(-300%); /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-      }
-
-
-
-    }
-
-
-
-  </style>
+  <!-- Linking to an external JavaScript file for functionality -->
+  <script src="js/home.js" defer></script>
 </head>
 <body>
 <main>
+  <!-- Main section containing the title and featured quotes -->
   <section class="title-section">
     <h1 class="slide-up-title">Welcome to The Book of Quotes!</h1>
-    <!-- Citaten Containers rond de titel -->
-    <div class="quote-container slide-left-up " id="quote1">
-      <p>"The only way to do great work is to love what you do." - Steve Jobs</p>
+
+    <!-- Containers for displaying quotes with schema.org markup for better search engine understanding -->
+    <div class="quote-container slide-left-up" id="quote1" itemscope itemtype="https://schema.org/Quote">
+      <p itemprop="text">"The only way to do great work is to love what you do." - Steve Jobs</p>
+      <meta itemprop="author" content="Steve Jobs">
     </div>
-    <div class="quote-container slide-right-up" id="quote2">
-      <p>"In the end, we will remember not the words of our enemies, but the silence of our friends." - Martin Luther King Jr.</p>
+    <div class="quote-container slide-right-up" id="quote2" itemscope itemtype="https://schema.org/Quote">
+      <p itemprop="text">"In the end, we will remember not the words of our enemies, but the silence of our friends." - Martin Luther King Jr.</p>
+      <meta itemprop="author" content="Martin Luther King Jr.">
     </div>
-    <div class="quote-container slide-left-down" id="quote3">
-      <p>"To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." - Ralph Waldo Emerson</p>
+    <div class="quote-container slide-left-down" id="quote3" itemscope itemtype="https://schema.org/Quote">
+      <p itemprop="text">"To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." - Ralph Waldo Emerson</p>
+      <meta itemprop="author" content="Ralph Waldo Emerson">
     </div>
-    <div class="quote-container slide-right-down" id="quote4">
-      <p>"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill</p>
+    <div class="quote-container slide-right-down" id="quote4" itemscope itemtype="https://schema.org/Quote">
+      <p itemprop="text">"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill</p>
+      <meta itemprop="author" content="Winston Churchill">
     </div>
+
+    <!-- Navigation links to other pages on the site -->
     <nav class="slide-up-nav">
       <ul>
         <li><a href="/">Home</a></li>
@@ -697,6 +90,7 @@
     </nav>
   </section>
 
+  <!-- Section showcasing a brief introduction to the site with a link to view more quotes -->
   <section class="quotes-section-1 slide-up-quotes-section1">
     <article class="quotes-container-1">
       <h2>Discover Quotes</h2>
@@ -705,6 +99,7 @@
     </article>
   </section>
 
+  <!-- Section to promote the "Quote of the Day" feature -->
   <section class="quotes-section-2 slide-up-quotes-section2">
     <article class="quotes-container-2">
       <h2>Discover Inspirational Quotes</h2>
@@ -713,7 +108,7 @@
     </article>
   </section>
 
-
+  <!-- Section promoting the "Quotes Game" feature to challenge users -->
   <section class="quotes-section-3 slide-up-quotes-section3">
     <article class="quotes-container-3">
       <h2>Discover Inspirational Quotes</h2>
@@ -722,8 +117,8 @@
     </article>
   </section>
 
-
-  <section class="categories-section">
+  <!-- Section showcasing popular categories of quotes -->
+  <section class="categories-section1">
     <h1>Popular Categories</h1>
     <div class="categories-grid">
       <a class="category-item" href="quotes?category=Motivation">Motivation</a>
@@ -732,10 +127,10 @@
       <a class="category-item" href="quotes?category=Success">Success</a>
       <a class="category-item" href="quotes?category=Humor">Humor</a>
     </div>
-
   </section>
 </main>
 
+<!-- Footer section with copyright information -->
 <footer>
   <p>&copy; 2024 The Book of Quotes. All rights reserved.</p>
 </footer>

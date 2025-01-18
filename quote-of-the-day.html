@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
+  <!-- Basic metadata: character set, viewport settings, and page title -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Book of Quotes - Quote of the Day</title>
@@ -8,10 +9,10 @@
   <meta name="author" content="The Book of Quotes Team">
   <meta name="keywords" content="quote of the day, daily quotes, motivational quotes, inspirational quotes, love quotes, success quotes, wisdom quotes">
 
-  <!-- Canonical link -->
+  <!-- Canonical link: informs search engines about the preferred URL for this page -->
   <link rel="canonical" href="https://bookofquotes.eu/quote-of-the-day">
 
-  <!-- Open Graph metagegevens (voor sociale media) -->
+  <!-- Open Graph metadata: optimizes social media sharing and visibility -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="The Book of Quotes - Quote of the Day">
   <meta property="og:description" content="Get inspired every day with the 'Quote of the Day'. Discover daily motivational, love, success, and wisdom quotes that uplift and inspire.">
@@ -20,24 +21,43 @@
   <meta property="og:site_name" content="The Book of Quotes">
   <meta property="og:locale" content="en_US">
 
-  <!-- Robots metagegevens -->
+  <!-- Robots metadata: instructs search engines to index this page and follow links -->
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
 
-  <!-- Favicon -->
+  <!-- Favicon and Apple Touch Icon for mobile devices -->
   <link rel="icon" href="https://bookofquotes.eu/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="https://bookofquotes.eu/images/apple-touch-icon.png">
 
-  <!-- Extra metagegevens voor veiligheid en snelheid -->
+  <!-- Additional metadata for security and performance -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; style-src 'self' 'unsafe-inline';">
 
+  <!-- Structured data: Adds a JSON-LD script for search engines to understand the website's context -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "The Book of Quotes - Quote of the Day",
+      "url": "https://bookofquotes.eu/quote-of-the-day",
+      "description": "Get inspired every day with the 'Quote of the Day'. Discover daily motivational, love, success, and wisdom quotes that uplift and inspire.",
+      "author": {
+        "@type": "Organization",
+        "name": "The Book of Quotes Team"
+      }
+    }
+  </script>
+
+  <!-- Linking to external CSS for styling -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Linking to external JavaScript file for the 'Quote of the Day' functionality -->
   <script src="js/quotes.js" defer></script>
 </head>
 <body>
 <header>
-  <h1 class="slide-up-title">The Book of Quotes</h1>
+  <!-- Header section with the site title and navigation menu -->
+  <h1 class="slide-up-title2">The Book of Quotes</h1>
   <nav class="slide-up-nav">
     <ul>
       <li><a href="/">Home</a></li>
@@ -49,15 +69,17 @@
   </nav>
 </header>
 
+<!-- Main section for displaying the quote of the day -->
 <section class="quote-of-the-day">
   <div class="quote-of-the-day-container">
     <h2>Quote of the Day</h2>
     <div id="quote-container">
-      <!-- De quote van de dag wordt hier geladen -->
+      <!-- The quote of the day will be dynamically loaded here -->
     </div>
   </div>
 </section>
 
+<!-- Footer section with copyright information -->
 <footer class="quote-of-the-day-footer">
   <p>&copy; 2024 The Book of Quotes</p>
 </footer>

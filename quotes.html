@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic metadata: character set, viewport settings, and page title -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Book of Quotes - Quotes</title>
@@ -8,10 +9,10 @@
   <meta name="author" content="The Book of Quotes Team">
   <meta name="keywords" content="quotes, inspirational quotes, motivational quotes, love quotes, success quotes, wisdom quotes, humor quotes, quote collection">
 
-  <!-- Canonical link -->
+  <!-- Canonical link: tells search engines the preferred URL for this page -->
   <link rel="canonical" href="https://bookofquotes.eu/quotes">
 
-  <!-- Open Graph metagegevens (voor sociale media) -->
+  <!-- Open Graph metadata: enhances social media visibility and sharing -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="The Book of Quotes - Quotes">
   <meta property="og:description" content="Explore a vast collection of quotes on love, success, motivation, wisdom, and humor. Find the perfect quote for every occasion at The Book of Quotes.">
@@ -20,25 +21,44 @@
   <meta property="og:site_name" content="The Book of Quotes">
   <meta property="og:locale" content="en_US">
 
-  <!-- Robots metagegevens -->
+  <!-- Robots metadata: instructs search engines to index and follow links on this page -->
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="index, follow">
 
-  <!-- Favicon -->
+  <!-- Favicon and Apple Touch Icon for better user experience on different devices -->
   <link rel="icon" href="https://bookofquotes.eu/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="https://bookofquotes.eu/images/apple-touch-icon.png">
 
-  <!-- Extra metagegevens voor veiligheid en snelheid -->
+  <!-- Additional metadata for security and performance -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; style-src 'self' 'unsafe-inline';">
 
+  <!-- Structured data: Adds a JSON-LD script for search engines to understand the website's context -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "The Book of Quotes - Quotes",
+      "url": "https://bookofquotes.eu/quotes",
+      "description": "Explore a vast collection of quotes on love, success, motivation, wisdom, and humor. Find the perfect quote for every occasion at The Book of Quotes.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Book of Quotes Team"
+      }
+    }
+  </script>
+
+  <!-- Link to external CSS for styling -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Link to external JavaScript file for quote filtering functionality -->
   <script src="js/quotes.js" defer></script>
 </head>
 <body>
 <div class="content-wrapper">
   <header>
-    <h1 class="slide-up-title">The Book of Quotes</h1>
+    <!-- Header section with site title and navigation -->
+    <h1 class="slide-up-title2">The Book of Quotes</h1>
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
@@ -48,13 +68,14 @@
         <li><a href="quotes-game">The Quotes Game</a></li>
       </ul>
     </nav>
+    <!-- Filters for searching and filtering quotes -->
     <main class="filters">
-      <input type="text" id="search-input" placeholder="Search quotes..." oninput="searchQuotes()">
-      <select id="search-option" onchange="searchQuotes()">
+      <input type="text" id="search-input" placeholder="Search quotes...">
+      <select id="search-option">
         <option value="text">Search by Text</option>
         <option value="author">Search by Author</option>
       </select>
-      <select id="category-filter" onchange="filterByCategory()">
+      <select id="category-filter">
         <option value="">All Categories</option>
         <option value="Motivation">Motivation</option>
         <option value="Wisdom">Wisdom</option>
@@ -64,9 +85,12 @@
       </select>
     </main>
   </header>
-  <section>
+
+  <!-- Section for displaying the list of quotes -->
+  <section class="quotes-list-section">
     <div id="quotes-list"></div>
 
+    <!-- Pagination controls -->
     <div id="pagination-container" class="pagination">
       <button id="prev-btn" onclick="prevPage()" disabled>Previous</button>
       <button id="next-btn" onclick="nextPage()" disabled>Next</button>
@@ -74,6 +98,7 @@
   </section>
 </div>
 
+<!-- Footer section with copyright information -->
 <footer class="quotes-page-ftr">
   <p>&copy; 2024 The Book of Quotes. All rights reserved.</p>
 </footer>

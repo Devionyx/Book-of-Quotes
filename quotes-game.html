@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Basis metagegevens -->
+    <!-- Basic metadata: character set, viewport settings, and page title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Book of Quotes - The Quotes Game</title>
@@ -9,10 +9,10 @@
     <meta name="author" content="The Book of Quotes Team">
     <meta name="keywords" content="quotes game, motivational quotes game, fun quotes game, love quotes game, success quotes game, wisdom quotes, humor quotes, inspirational game">
 
-    <!-- Canonical link -->
+    <!-- Canonical link: helps search engines know the preferred URL -->
     <link rel="canonical" href="https://bookofquotes.eu/quotes-game">
 
-    <!-- Open Graph metagegevens (voor sociale media) -->
+    <!-- Open Graph metadata: improves social media sharing and visibility -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="The Book of Quotes - The Quotes Game">
     <meta property="og:description" content="Play The Quotes Game and test your knowledge of inspiring quotes. Fun and motivation combined!">
@@ -21,24 +21,43 @@
     <meta property="og:site_name" content="The Book of Quotes">
     <meta property="og:locale" content="en_US">
 
-    <!-- Robots metagegevens -->
+    <!-- Robots metadata: instructs search engines to index this page and follow links -->
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
 
-    <!-- Favicon -->
+    <!-- Favicon and Apple Touch Icon for mobile devices -->
     <link rel="icon" href="https://bookofquotes.eu/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://bookofquotes.eu/images/apple-touch-icon.png">
 
-    <!-- Extra metagegevens voor veiligheid en snelheid -->
+    <!-- Security and performance-related meta tags -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https:; style-src 'self' 'unsafe-inline';">
 
+    <!-- Structured data: Adds a JSON-LD script for search engines to understand the website's context -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "The Book of Quotes - The Quotes Game",
+            "url": "https://bookofquotes.eu/quotes-game",
+            "description": "Play The Quotes Game and test your knowledge of inspiring quotes. Fun and motivation combined!",
+            "author": {
+                "@type": "Organization",
+                "name": "The Book of Quotes Team"
+            }
+        }
+    </script>
+
+    <!-- Linking to external CSS file for styling -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Linking to an external JavaScript file for functionality specific to the quotes game -->
     <script src="js/quotes-game.js" defer></script>
 </head>
 <body>
 <header>
-    <h1 class="slide-up-title">The Quotes Game</h1>
+    <!-- Header section with the site title and navigation menu -->
+    <h1 class="slide-up-title2">The Quotes Game</h1>
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
@@ -50,15 +69,21 @@
     </nav>
 </header>
 
+<!-- Main section for the Quotes Game -->
 <section id="game-content" class="quote-game-container">
     <div class="game-header">
+        <!-- Displays remaining lives and score -->
         <span id="lives">❤️❤️❤️</span>
         <h2>Guess the Author!</h2>
         <span id="score">⭐ Score: 0</span>
     </div>
+
+    <!-- Section to display the current quote -->
     <div id="quote-section">
         <p id="quote-text">Loading quote...</p>
     </div>
+
+    <!-- Option cards for user to select the correct author -->
     <div id="options" class="option-cards">
         <div class="option-card">Option 1</div>
         <div class="option-card">Option 2</div>
@@ -66,12 +91,12 @@
     </div>
 </section>
 
-
-<!-- Pop-up voor meldingen -->
+<!-- Pop-up notification section -->
 <div id="popup" class="popup">
     <p id="popup-message"></p>
 </div>
 
+<!-- Footer section with copyright information -->
 <footer class="quote-of-the-day-footer">
     <p>&copy; 2024 The Book of Quotes. All rights reserved.</p>
 </footer>

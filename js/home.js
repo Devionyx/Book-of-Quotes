@@ -42,24 +42,24 @@ function updateScrollPercentage() {
     }
 
     if (scrollPercentage >= 70) {
-        document.querySelector('.categories-section').style.display = 'block';
+        document.querySelector('.categories-section1').style.display = 'block';
         document.querySelector('.slide-up-quotes-section1').style.display = 'none';
         document.querySelector('.slide-up-quotes-section2').style.display = 'none';
         document.querySelector('.slide-up-quotes-section3').style.display = 'none';
 
     }
     else {
-        document.querySelector('.categories-section').style.display = 'none';
+        document.querySelector('.categories-section1').style.display = 'none';
         document.querySelector('.slide-up-quotes-section1').style.display = 'flex';
         document.querySelector('.slide-up-quotes-section2').style.display = 'flex';
         document.querySelector('.slide-up-quotes-section3').style.display = 'flex';
     }
 
     if (scrollPercentage >= 80) {
-        document.querySelector('.categories-section').classList.add('visible');
+        document.querySelector('.categories-section1').classList.add('visible');
     }
     else {
-        document.querySelector('.categories-section').classList.remove('visible');
+        document.querySelector('.categories-section1').classList.remove('visible');
     }
 }
 window.addEventListener('scroll', updateScrollPercentage);
