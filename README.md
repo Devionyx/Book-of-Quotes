@@ -24,13 +24,14 @@ Welcome to **The Book of Quotes**, a static website dedicated to showcasing a va
 
 1. **Browse**: Explore categories or use the search bar to find the perfect quote.
 2. **Read**: Reflect on the quote’s message and its relevance to your life.
-3. **Share**: Easily share your favorite quotes on social media to spread the inspiration.
 
 ## To-Do List:
 
 1. **Expand the Collection of Quotes**: Add a broader range of quotes to increase diversity and engagement. These will include motivational, humorous, and thought-provoking quotes.
 
 2. **User Personalization**: Allow users to save their favorite quotes and create a personalized collection.
+
+3. **Share**: Easily share your favorite quotes on social media to spread the inspiration.
 
 ---
 
