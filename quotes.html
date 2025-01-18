@@ -83,13 +83,16 @@
         <option value="Success">Success</option>
         <option value="Humor">Humor</option>
       </select>
+      <select id="filter-liked">
+        <option value="">All Quotes</option>
+        <option value="liked">Liked Quotes</option>
+      </select>
     </main>
   </header>
 
   <!-- Section for displaying the list of quotes -->
   <section class="quotes-list-section">
     <div id="quotes-list"></div>
-
     <!-- Pagination controls -->
     <div id="pagination-container" class="pagination">
       <button id="prev-btn" onclick="prevPage()" disabled>Previous</button>

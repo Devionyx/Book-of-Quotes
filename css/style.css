@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #ffffff 0%, #7c7fc1 100%);
-    background-size: 400% 400%;
+    background-size: 600% 600%;
     animation: gradientFade 30s ease infinite;
     color: #000000;
     position: relative;
@@ -726,11 +726,24 @@ footer p {
 
 /* Stijlen voor de quote categorie */
 .quote-category {
-    font-size: 14px;
-    color: #888; /* Grijze kleur voor de categorie */
     font-weight: bold;
     margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #333333; /* Gebruik een lichtere kleur voor categorieën */
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
+
+.quote-container-a {
+    width: 100%;
+}
+
+.share-buttons a{
+    text-decoration: none;
+}
+
 
 .filters {
     margin-top: 20px;
@@ -804,11 +817,7 @@ footer p {
     color: black; /* Zorgt ervoor dat tekst duidelijk blijft */
     text-shadow: 0 0 10px #cccccc; /* Subtiele gloed zoals elders */
     line-height: 1.6; /* Betere leesbaarheid */
-}
-.quote-category {
-    font-size: 0.9rem;
-    color: #333333; /* Gebruik een lichtere kleur voor categorieën */
-    margin-top: 10px;
+    width: 100%;
 }
 
 
@@ -1116,13 +1125,26 @@ h3 {
     margin-top: 50px;
 }
 
+.heart-icon{
+    fill: darkgray;
+    margin-left: 5px;  /* Voeg wat ruimte toe tussen de auteur en het hartje */
+    font-size: 1.4rem;  /* Maak het icoon iets groter */
+    cursor: pointer;  /* Maak het klikbaar (indien je actie aan het hartje wilt koppelen) */
+    width: 20px;
+    height: 20px;
+}
+
+.heart-icon:hover {
+    fill: gray;  /* Verander de kleur van het hart als de gebruiker erover hovert */
+}
+
 
 @media (prefers-color-scheme: dark) {
     html, body {
         color: #ffffff;
         background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
         animation: gradientFade 30s ease infinite;
-        background-size: 400% 400%;
+        background-size: 600% 600%;
     }
 
     .quote {
