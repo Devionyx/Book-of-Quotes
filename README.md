@@ -36,9 +36,20 @@ Welcome to **The Book of Quotes**, a static website dedicated to showcasing a va
 
 ## Screenshots
 
-![Home Screenshot](screenshots/home_screenshot.png)  <!-- Replace with an actual image URL or file path -->
-*Screenshot of the Book of Quotes website showcasing the collection.*
+![Home Screenshot](screenshots/home_screenshot.png)
+*Screenshot of the Book of Quotes website showcasing the homepage.*
 
+![Quote of the day Screenshot](screenshots/quote_of_the_day_screenshot.png)
+*Screenshot of the Book of Quotes website showcasing the quote of the day.*
+
+![Quoteslist Screenshot](screenshots/quoteslist_screenshot.png)
+*Screenshot of the Book of Quotes website showcasing the quotes list and search page.*
+
+![Categories Screenshot](screenshots/categories_screenshot.png)
+*Screenshot of the Book of Quotes website showcasing the categories.*
+
+![Quotes game_Screenshot](screenshots/quotes_game_screenshot.png)
+*Screenshot of the Book of Quotes website showcasing the quotes game.*
 ---
 
 Thank you for visiting **The Book of Quotes**! Stay tuned for new updates and enjoy exploring the wisdom of some of the greatest minds in history.
