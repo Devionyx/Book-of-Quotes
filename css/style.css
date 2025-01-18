@@ -779,13 +779,13 @@ h3 {
     }
 
     .quote-of-the-day-footer {
-    margin-top: 200px;
+        margin-top: 200px;
     }
 
-    .option-cards{
+    .option-cards {
         gap: 2px;
         padding: 0;
-
+    }
 
     .option-card {
         padding: 6px;
