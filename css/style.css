@@ -1251,6 +1251,10 @@ h3 {
         display: none; /* Toon details bij openen */
     }
 
+    .quote.open {
+        padding-bottom: 100px;
+    }
+
     html, body {
         background-size: 700% 700%;
     }
