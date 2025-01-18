@@ -36,7 +36,7 @@ Welcome to **The Book of Quotes**, a static website dedicated to showcasing a va
 
 ## Screenshots
 
-![Website Screenshot](url-to-image)  <!-- Replace with an actual image URL or file path -->
+![Home Screenshot](screenshots/home_screenshot.png)  <!-- Replace with an actual image URL or file path -->
 *Screenshot of the Book of Quotes website showcasing the collection.*
 
 ---
