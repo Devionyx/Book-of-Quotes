@@ -208,27 +208,467 @@ footer p {
     animation: fadeIn 2s ease forwards; /* Apply fade-in animation */
 }
 
+/* Author image styling */
+.author-image {
+    max-width: 180px;
+    max-height: 320px;
+    margin: 10px;
+    height: auto;
+    border-radius: 8px; /* Rounded corners for images */
+}
+
+/* Container for categories */
+.categories-container {
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Wrap items if needed */
+    justify-content: center; /* Center categories */
+    gap: 20px; /* Spacing between categories */
+    margin-top: 20px; /* Space above the categories */
+}
+
+/* Individual category card styling */
+.category-card {
+    background-color: white; /* White background */
+    color: black; /* Black text color */
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    width: 200px; /* Fixed width */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transition: all 0.3s ease, border-color 0.5s ease; /* Smooth transition */
+    position: relative; /* Allows positioning of elements inside */
+    padding: 20px 10px; /* Padding inside */
+    cursor: pointer; /* Indicate that it's clickable */
+}
+
+/* Category card styles */
+.category-card h3 {
+    transform: scale(100%);
+    transition: all 0.3s ease; /* Smooth transition for scaling */
+}
+
+.category-card:hover {
+    border-color: #6a11cb; /* Change border color on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
+}
+
+.category-card:hover h3 {
+    transform: scale(120%); /* Scale up text inside the category card */
+    transition: all 0.3s ease; /* Smooth transition for scaling */
+}
+
+.category-card a {
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Set link color to black */
+}
+
+/* Category item style */
+.category-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: black;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
+}
+
+/* Hover effect for category item */
+.category-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    border: 2px solid #8a2be2;
+}
+
+/* Paragraph text in category item */
+.category-item p {
+    margin: 10px 0 0;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #ccc;
+}
+
+/* Title text in category item */
+.category-item h3 {
+    font-size: 1.3rem;
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+/* Grid layout for categories */
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 12px;
+    margin: 40px auto;
+    height: 500px;
+    max-width: 1200px;
+    align-items: start;
+    animation: fadeInMove 1.5s ease-out;
+}
+
+/* Categories section styling */
+.categories-section {
+    margin-top: 50px; /* Space above the categories section */
+}
+
+/* Category section 1 visibility handling */
+.categories-section1 {
+    display: none;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+
+.categories-section1.visible {
+    display: none;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+/* Category quote container styling */
+.categories-quote-container {
+    display: none; /* Initially hidden */
+    gap: 20%;
+    width: 100%;
+    margin-top: 4%;
+    margin-left: 20%;
+    margin-right: 20%;
+    color: #fff; /* White text color */
+    font-style: italic;
+    font-size: 1.2rem;
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease forwards; /* Fade-in animation */
+}
+
+/* Styling for individual category quotes */
+.categories-quote-1,
+.categories-quote-2 {
+    margin: 5px 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 20%; /* Limit max width of quotes */
+}
+
 .content-wrapper {
     flex: 1;
     /* Let the content stretch */
     display: flex;
     flex-direction: column;
 }
-.quotes-page-ftr {
-    margin-top: auto;
-    /* Pushes the footer to the bottom */
+
+/* Description text styling */
+.description {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: black;
+    text-align: center; /* Center align text */
+    font-style: italic; /* Italicize the description */
+    min-height: 20px;
+    margin-top: 2%;
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease forwards; /* Fade-in animation */
 }
 
-.title-section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* Filter section styling */
+.filters {
+    margin-top: 20px;
     text-align: center;
-    transition: transform 1s ease, opacity 1s ease;
-    /* Title section with a smooth transition */
+}
+
+/* Styling for input and select elements inside .filters */
+.filters input,
+.filters select {
+    margin: 5px; /* Margin for spacing */
+    padding: 10px; /* Padding inside the input/select */
+    font-size: 16px; /* Font size for readability */
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Subtle border */
+    border-radius: 5px; /* Rounded corners for input/select */
+    background-color: rgba(255, 255, 255, 0.6); /* Slightly transparent white background */
+    color: black; /* Black text color */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4); /* Subtle shadow */
+}
+
+/* Focus state for input/select elements */
+.filters input:focus,
+.filters select:focus {
+    border-color: #0206a1; /* Border color when focused */
+    outline: none; /* Remove outline on focus */
+}
+
+/* Container for game section */
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Game header styling */
+.game-container h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+/* Game paragraph text */
+.game-container p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* Game call-to-action button */
+.game-container .cta-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for game call-to-action button */
+.game-container .cta-button:hover {
+    background-color: #e67e22;
+}
+
+/* Game header styling (title, lives, score) */
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px; /* Space below the header */
+}
+
+.game-header h2 {
+    font-size: 2rem;
+    color: black;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Text shadow effect */
+    margin: 0;
+    text-align: center; /* Center align the title */
+}
+
+/* Game section styling */
+.game-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Heart icon styling */
+.heart-icon {
+    fill: darkgray; /* Default color of the heart icon */
+    margin-left: 5px; /* Space between author and heart */
+    font-size: 1.4rem; /* Slightly larger heart icon */
+    cursor: pointer; /* Make it clickable (for future action) */
+    width: 20px;
+    height: 20px;
+}
+
+.heart-icon:hover {
+    fill: gray; /* Change color of the heart icon on hover */
+}
+
+/* Introductory section styling */
+.intro {
+    background: linear-gradient(to right, #ff7e5f, #feb47b, #6a11cb, #2575fc);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/* Intro heading */
+.intro h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Intro paragraph */
+.intro p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+/* Call-to-action button in intro */
+.intro .cta-button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for call-to-action button */
+.intro .cta-button:hover {
+    background-color: #e67e22;
+}
+
+/* Content area for intro */
+.intro-content {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+/* Individual option card styling */
+.option-card {
+    background-color: white;
+    color: black;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Semi-transparent border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    width: 30%;
+    text-align: center; /* Center text in option cards */
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.option-card:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight background color change on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Shadow effect on hover */
+}
+
+/* Option cards container styling */
+.option-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px; /* Space above the option cards */
+}
+
+/* Pagination styling */
+.pagination {
+    margin-top: 20px; /* Spacing above the pagination */
+    text-align: center; /* Center-align pagination */
+    display: flex;
+    justify-content: center; /* Center buttons */
+}
+
+/* Styling for pagination buttons */
+.pagination button {
+    padding: 10px 20px; /* Padding inside buttons */
+    margin: 0 10px; /* Margin between buttons */
+    font-size: 16px; /* Font size for the buttons */
+    background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+    color: white; /* White text color */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor indicates button is clickable */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover */
+}
+
+/* Hover effect for pagination buttons */
+.pagination button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* More shadow on hover */
+}
+
+/* Disabled state for pagination buttons */
+.pagination button:disabled {
+    background-color: rgba(255, 255, 255, 0.1); /* Faded background for disabled state */
+    cursor: not-allowed; /* Cursor changes to not-allowed */
+}
+
+/* Pop-up message styling */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position on screen */
+    top: 40%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+    color: white; /* White text color */
+    padding: 20px 40px; /* Padding inside pop-up */
+    border-radius: 8px; /* Rounded corners */
+    border: 3px solid red; /* Red border */
+    font-size: 2em; /* Larger text size */
+    z-index: 1000; /* Ensure it's on top of other elements */
+    opacity: 0; /* Start as invisible */
+    pointer-events: none; /* Prevent interaction before show */
+    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition */
+}
+
+/* Animation for showing the pop-up */
+.popup.show {
+    display: block; /* Make it visible */
+    opacity: 1; /* Full opacity */
+    animation: popup-appear 1s ease-out forwards; /* Animation for appearance */
+}
+
+/* Styling for quote boxes */
+.quote {
+    margin-bottom: 20px; /* Spacing below the quote */
+    background-color: #cccccc; /* Light grey background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Space around the text */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Depth effect */
+    scale: 1; /* Default scale */
+    transition: transform 0.3s ease, max-height 0.3s ease; /* Smooth transition for scale and height */
+}
+
+/* Hover effect for quote boxes */
+.quote:hover {
+    background-color: #ffffff; /* Lighter background on hover */
+    transform: translateY(-5px); /* Slight movement on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* More intense shadow on hover */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+}
+
+/* Quote box when opened */
+.quote.open {
+    transform: scale(1.1); /* Slight zoom in effect */
+    max-height: 300px; /* Set max height when open */
+    background-color: #cccccc; /* Keep the background color */
+}
+
+/* Prevent text decoration in open quote */
+.quote.open p {
+    text-decoration: none;
+}
+
+/* Show quote details when opened */
+.quote.open .quote-details {
+    display: block; /* Display details */
+}
+
+/* Quote category styling */
+.quote-category {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #333333;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .quote-container {
@@ -246,13 +686,77 @@ footer p {
     /* Quote container with dark background and hidden initially */
 }
 
-.quotes-section-1,
-.quotes-section-2,
-.quotes-section-3 {
+/* Container for individual quote */
+.quote-container-a {
+    width: 100%;
+}
+
+/* Hidden quote details by default */
+.quote-details {
+    display: none; /* Hide details by default */
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
+}
+
+/* Quote game container styling */
+.quote-game-container {
+    background-color: white;
+    border: 3px solid #2575fc; /* Border color */
+    padding: 30px;
+    border-radius: 30px; /* Rounded corners */
+    width: 60%;
+    margin: 50px auto; /* Center the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bordercolor 10s ease infinite; /* Infinite border color animation */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Shadow effect */
+}
+
+/* Styling for the quote of the day */
+.quote-of-the-day {
+    margin-top: 7%;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Flex containers for each quote section */
+}
+
+/* Quote of the day container */
+.quote-of-the-day-container {
+    background-color: white;
+    border: 3px solid #2575fc;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 30px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    animation: bordercolor 10s ease infinite;
+}
+
+/* Footer styling for fixed position */
+.quote-of-the-day-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.quotes-page-ftr {
+    margin-top: auto;
+    /* Pushes the footer to the bottom */
+}
+
+/* Styling for quote text */
+.quote-text {
+    font-size: 1.2rem; /* Larger text for quotes */
+    font-style: italic; /* Italic text style */
+    color: black; /* Black text color */
+    text-shadow: 0 0 10px #cccccc; /* Subtle glow effect */
+    line-height: 1.6; /* Line height for readability */
+    width: 100%; /* Full width */
+    margin-bottom: 10px;
+    padding: 10px;
+    text-decoration: underline;
 }
 
 .quotes-container-1,
@@ -293,26 +797,23 @@ footer p {
     /* Increases link text size */
 }
 
-/* Slide animation from left-up */
-.slide-left-up {
-    animation: fadeInMove 3s ease-in-out forwards, floatEffect1 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+/* Styling for the quote section */
+.quotes-list-section {
+    margin-bottom: 100px;
 }
 
-/* Slide-out animation when visible for left-up */
-.slide-left-up.visible {
-    animation: leftupout 1s ease-out forwards;
-    opacity: 1;
+.quotes-section-1,
+.quotes-section-2,
+.quotes-section-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Flex containers for each quote section */
 }
 
-/* Slide animation from right-up */
-.slide-right-up {
-    animation: fadeInMove 3s ease-in-out forwards, floatEffect2 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-/* Slide-out animation when visible for right-up */
-.slide-right-up.visible {
-    animation: rightupout 1s ease-out forwards;
-    opacity: 1;
+/* Share buttons styling */
+.share-buttons a {
+    text-decoration: none;
 }
 
 /* Slide animation from left-down */
@@ -323,6 +824,17 @@ footer p {
 /* Slide-out animation when visible for left-down */
 .slide-left-down.visible {
     animation: leftdownout 1s ease-out forwards;
+    opacity: 1;
+}
+
+/* Slide animation from left-up */
+.slide-left-up {
+    animation: fadeInMove 3s ease-in-out forwards, floatEffect1 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Slide-out animation when visible for left-up */
+.slide-left-up.visible {
+    animation: leftupout 1s ease-out forwards;
     opacity: 1;
 }
 
@@ -337,16 +849,15 @@ footer p {
     opacity: 1;
 }
 
-/* Initial position and transition effect for title */
-.slide-up-title {
-    transform: translateY(0);
-    transition: transform 1s ease;
+/* Slide animation from right-up */
+.slide-right-up {
+    animation: fadeInMove 3s ease-in-out forwards, floatEffect2 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-/* Animation for title sliding out of the screen */
-.slide-up-title.visible {
-    transform: translateY(-400%);
-    transition: transform 1s ease;
+/* Slide-out animation when visible for right-up */
+.slide-right-up.visible {
+    animation: rightupout 1s ease-out forwards;
+    opacity: 1;
 }
 
 /* Initial position and transition effect for navigation */
@@ -417,532 +928,16 @@ footer p {
     transition: transform 1s ease, opacity 1s ease;
 }
 
-/* Grid layout for categories */
-.categories-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 40px;
-    background-color: rgba(0, 0, 0, 0);
-    border-radius: 12px;
-    margin: 40px auto;
-    height: 500px;
-    max-width: 1200px;
-    align-items: start;
-    animation: fadeInMove 1.5s ease-out;
+/* Initial position and transition effect for title */
+.slide-up-title {
+    transform: translateY(0);
+    transition: transform 1s ease;
 }
 
-/* Category item style */
-.category-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    padding: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    text-align: center;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-decoration: none;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    color: black;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
-}
-
-/* Hover effect for category item */
-.category-item:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-    border: 2px solid #8a2be2;
-}
-
-/* Paragraph text in category item */
-.category-item p {
-    margin: 10px 0 0;
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: #ccc;
-}
-
-/* Title text in category item */
-.category-item h3 {
-    font-size: 1.3rem;
-    margin: 0 0 10px;
-    color: #fff;
-}
-
-/* Category section 1 visibility handling */
-.categories-section1 {
-    display: none;
-    opacity: 0;
-    transition: opacity 2s ease;
-}
-
-.categories-section1.visible {
-    display: none;
-    opacity: 1;
-    transition: opacity 2s ease;
-}
-
-/* Styling for the quote section */
-.quotes-list-section {
-    margin-bottom: 100px;
-}
-
-/* Quote of the day container */
-.quote-of-the-day-container {
-    background-color: white;
-    border: 3px solid #2575fc;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    border-radius: 30px;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    animation: bordercolor 10s ease infinite;
-}
-
-/* Styling for the quote of the day */
-.quote-of-the-day {
-    margin-top: 7%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Footer styling for fixed position */
-.quote-of-the-day-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Introductory section styling */
-.intro {
-    background: linear-gradient(to right, #ff7e5f, #feb47b, #6a11cb, #2575fc);
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-}
-
-/* Content area for intro */
-.intro-content {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border-radius: 8px;
-}
-
-/* Intro heading */
-.intro h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-/* Intro paragraph */
-.intro p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-}
-
-/* Call-to-action button in intro */
-.intro .cta-button {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    background-color: #f39c12;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-/* Hover effect for call-to-action button */
-.intro .cta-button:hover {
-    background-color: #e67e22;
-}
-
-/* Game section styling */
-.game-section {
-    background-color: #f9f9f9;
-    padding: 60px 20px;
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-/* Container for game section */
-.game-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: #333;
-    color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Game header styling */
-.game-container h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
-}
-
-/* Game paragraph text */
-.game-container p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-}
-
-/* Game call-to-action button */
-.game-container .cta-button {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    background-color: #f39c12;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-/* Hover effect for game call-to-action button */
-.game-container .cta-button:hover {
-    background-color: #e67e22;
-}
-
-/* Styling for quote text */
-.quote-text {
-    font-size: 18px;
-    font-style: italic;
-    color: #333;
-    margin-bottom: 10px;
-    padding: 10px;
-    line-height: 1.6;
-    text-decoration: underline;
-}
-
-/* Quote category styling */
-.quote-category {
-    font-weight: bold;
-    margin-bottom: 15px;
-    font-size: 0.9rem;
-    color: #333333;
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-/* Container for individual quote */
-.quote-container-a {
-    width: 100%;
-}
-
-/* Share buttons styling */
-.share-buttons a {
-    text-decoration: none;
-}
-
-/* Filter section styling */
-.filters {
-    margin-top: 20px;
-    text-align: center;
-}
-
-/* Styling for input and select elements inside .filters */
-.filters input,
-.filters select {
-    margin: 5px; /* Margin for spacing */
-    padding: 10px; /* Padding inside the input/select */
-    font-size: 16px; /* Font size for readability */
-    border: 2px solid rgba(0, 0, 0, 0.2); /* Subtle border */
-    border-radius: 5px; /* Rounded corners for input/select */
-    background-color: rgba(255, 255, 255, 0.6); /* Slightly transparent white background */
-    color: black; /* Black text color */
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4); /* Subtle shadow */
-}
-
-/* Focus state for input/select elements */
-.filters input:focus,
-.filters select:focus {
-    border-color: #0206a1; /* Border color when focused */
-    outline: none; /* Remove outline on focus */
-}
-
-/* Styling for quote boxes */
-.quote {
-    margin-bottom: 20px; /* Spacing below the quote */
-    background-color: #cccccc; /* Light grey background */
-    border-radius: 10px; /* Rounded corners */
-    padding: 15px; /* Space around the text */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Depth effect */
-    scale: 1; /* Default scale */
-    transition: transform 0.3s ease, max-height 0.3s ease; /* Smooth transition for scale and height */
-}
-
-/* Hover effect for quote boxes */
-.quote:hover {
-    background-color: #ffffff; /* Lighter background on hover */
-    transform: translateY(-5px); /* Slight movement on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* More intense shadow on hover */
-    transition: all 0.3s ease; /* Smooth transition for all properties */
-}
-
-/* Quote box when opened */
-.quote.open {
-    transform: scale(1.1); /* Slight zoom in effect */
-    max-height: 300px; /* Set max height when open */
-    background-color: #cccccc; /* Keep the background color */
-}
-
-/* Prevent text decoration in open quote */
-.quote.open p {
-    text-decoration: none;
-}
-
-/* Hidden quote details by default */
-.quote-details {
-    display: none; /* Hide details by default */
-    transition: opacity 0.3s ease; /* Smooth opacity transition */
-}
-
-/* Show quote details when opened */
-.quote.open .quote-details {
-    display: block; /* Display details */
-}
-
-/* Styling for the text inside the quote */
-.quote-text {
-    font-size: 1.2rem; /* Larger text for quotes */
-    font-style: italic; /* Italic text style */
-    color: black; /* Black text color */
-    text-shadow: 0 0 10px #cccccc; /* Subtle glow effect */
-    line-height: 1.6; /* Line height for readability */
-    width: 100%; /* Full width */
-}
-
-/* Pagination styling */
-.pagination {
-    margin-top: 20px; /* Spacing above the pagination */
-    text-align: center; /* Center-align pagination */
-    display: flex;
-    justify-content: center; /* Center buttons */
-}
-
-/* Styling for pagination buttons */
-.pagination button {
-    padding: 10px 20px; /* Padding inside buttons */
-    margin: 0 10px; /* Margin between buttons */
-    font-size: 16px; /* Font size for the buttons */
-    background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
-    color: white; /* White text color */
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Cursor indicates button is clickable */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover */
-}
-
-/* Hover effect for pagination buttons */
-.pagination button:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* More shadow on hover */
-}
-
-/* Disabled state for pagination buttons */
-.pagination button:disabled {
-    background-color: rgba(255, 255, 255, 0.1); /* Faded background for disabled state */
-    cursor: not-allowed; /* Cursor changes to not-allowed */
-}
-
-/* Pop-up message styling */
-.popup {
-    display: none; /* Hidden by default */
-    position: fixed; /* Fixed position on screen */
-    top: 40%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for perfect centering */
-    background-color: rgba(0, 0, 0, 0.8); /* Dark transparent background */
-    color: white; /* White text color */
-    padding: 20px 40px; /* Padding inside pop-up */
-    border-radius: 8px; /* Rounded corners */
-    border: 3px solid red; /* Red border */
-    font-size: 2em; /* Larger text size */
-    z-index: 1000; /* Ensure it's on top of other elements */
-    opacity: 0; /* Start as invisible */
-    pointer-events: none; /* Prevent interaction before show */
-    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition */
-}
-
-/* Animation for showing the pop-up */
-.popup.show {
-    display: block; /* Make it visible */
-    opacity: 1; /* Full opacity */
-    animation: popup-appear 1s ease-out forwards; /* Animation for appearance */
-}
-
-/* Container for categories */
-.categories-container {
-    display: flex; /* Flexbox layout */
-    flex-wrap: wrap; /* Wrap items if needed */
-    justify-content: center; /* Center categories */
-    gap: 20px; /* Spacing between categories */
-    margin-top: 20px; /* Space above the categories */
-}
-
-/* Individual category card styling */
-.category-card {
-    background-color: white; /* White background */
-    color: black; /* Black text color */
-    border: 3px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-    border-radius: 15px; /* Rounded corners */
-    overflow: hidden; /* Prevent overflow */
-    width: 200px; /* Fixed width */
-    text-align: center; /* Center text */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-    transition: all 0.3s ease, border-color 0.5s ease; /* Smooth transition */
-    position: relative; /* Allows positioning of elements inside */
-    padding: 20px 10px; /* Padding inside */
-    cursor: pointer; /* Indicate that it's clickable */
-}
-
-/* Category card styles */
-.category-card h3 {
-    transform: scale(100%);
-    transition: all 0.3s ease; /* Smooth transition for scaling */
-}
-
-.category-card:hover {
-    border-color: #6a11cb; /* Change border color on hover */
-    transform: translateY(-5px); /* Slight lift effect on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
-}
-
-.category-card:hover h3 {
-    transform: scale(120%); /* Scale up text inside the category card */
-    transition: all 0.3s ease; /* Smooth transition for scaling */
-}
-
-.category-card a {
-    text-decoration: none; /* Remove underline from links */
-    color: black; /* Set link color to black */
-}
-
-/* Description text styling */
-.description {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: black;
-    text-align: center; /* Center align text */
-    font-style: italic; /* Italicize the description */
-    min-height: 20px;
-    margin-top: 2%;
-    opacity: 0; /* Initially invisible */
-    animation: fadeIn 2s ease forwards; /* Fade-in animation */
-}
-
-/* Category quote container styling */
-.categories-quote-container {
-    display: none; /* Initially hidden */
-    gap: 20%;
-    width: 100%;
-    margin-top: 4%;
-    margin-left: 20%;
-    margin-right: 20%;
-    color: #fff; /* White text color */
-    font-style: italic;
-    font-size: 1.2rem;
-    opacity: 0; /* Initially invisible */
-    animation: fadeIn 2s ease forwards; /* Fade-in animation */
-}
-
-/* Styling for individual category quotes */
-.categories-quote-1,
-.categories-quote-2 {
-    margin: 5px 0;
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
-    border-radius: 10px;
-    padding: 10px;
-    max-width: 20%; /* Limit max width of quotes */
-}
-
-/* Categories section styling */
-.categories-section {
-    margin-top: 50px; /* Space above the categories section */
-}
-
-/* Author image styling */
-.author-image {
-    max-width: 180px;
-    max-height: 320px;
-    margin: 10px;
-    height: auto;
-    border-radius: 8px; /* Rounded corners for images */
-}
-
-/* Quote game container styling */
-.quote-game-container {
-    background-color: white;
-    border: 3px solid #2575fc; /* Border color */
-    padding: 30px;
-    border-radius: 30px; /* Rounded corners */
-    width: 60%;
-    margin: 50px auto; /* Center the container */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: bordercolor 10s ease infinite; /* Infinite border color animation */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Shadow effect */
-}
-
-/* Game header styling (title, lives, score) */
-.game-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px; /* Space below the header */
-}
-
-.game-header h2 {
-    font-size: 2rem;
-    color: black;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Text shadow effect */
-    margin: 0;
-    text-align: center; /* Center align the title */
-}
-
-/* Option cards container styling */
-.option-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    width: 100%;
-    margin-top: 20px; /* Space above the option cards */
-}
-
-/* Individual option card styling */
-.option-card {
-    background-color: white;
-    color: black;
-    border: 2px solid rgba(255, 255, 255, 0.2); /* Semi-transparent border */
-    border-radius: 15px; /* Rounded corners */
-    padding: 20px;
-    width: 30%;
-    text-align: center; /* Center text in option cards */
-    font-size: 1.2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.3s ease; /* Smooth transition on hover */
-}
-
-.option-card:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Slight background color change on hover */
-    transform: translateY(-5px); /* Slight lift effect on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Shadow effect on hover */
+/* Animation for title sliding out of the screen */
+.slide-up-title.visible {
+    transform: translateY(-400%);
+    transition: transform 1s ease;
 }
 
 /* Title styling for sliding effect */
@@ -950,18 +945,16 @@ footer p {
     margin-top: 50px; /* Space above the title */
 }
 
-/* Heart icon styling */
-.heart-icon {
-    fill: darkgray; /* Default color of the heart icon */
-    margin-left: 5px; /* Space between author and heart */
-    font-size: 1.4rem; /* Slightly larger heart icon */
-    cursor: pointer; /* Make it clickable (for future action) */
-    width: 20px;
-    height: 20px;
-}
-
-.heart-icon:hover {
-    fill: gray; /* Change color of the heart icon on hover */
+.title-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    transition: transform 1s ease, opacity 1s ease;
+    /* Title section with a smooth transition */
 }
 
 @keyframes gradientFade {
