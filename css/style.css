@@ -1,106 +1,222 @@
-/* Algemene body stijlen */
+/* General body styles */
 html, body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ffffff 0%, #7c7fc1 100%);
-    background-size: 600% 600%;
-    animation: gradientFade 30s ease infinite;
-    color: #000000;
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    margin: 0; /* Remove default margin */
+    font-family: 'Arial', sans-serif; /* Set font family */
+    background: linear-gradient(135deg, #ffffff 0%, #7c7fc1 100%); /* Gradient background */
+    background-size: 600% 600%; /* Size of the background animation */
+    animation: gradientFade 30s ease infinite; /* Gradient animation */
+    color: #000000; /* Text color */
+    position: relative; /* Relative positioning for the body */
+    height: 100%; /* Full height */
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+}
+
+/* Hide the scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Navigation bar styles */
+nav {
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center the navigation */
+    margin-top: 20px; /* Space above the navigation */
+}
+
+/* General styles for the list of links */
+nav ul {
+    display: flex; /* Use flexbox layout */
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    list-style: none; /* Remove bullet points */
+    justify-content: center; /* Center the list */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    gap: 10px; /* Space between items */
+}
+
+/* Styles for navigation links */
+nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: #fff; /* Text color */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Border with low opacity */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px 20px; /* Inner spacing */
+    font-size: 1rem; /* Font size */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Drop shadow */
+    transition: all 0.3s ease; /* Smooth transition for effects */
+}
+
+/* Hover effect styles for navigation links */
+nav ul li a:hover {
+    transform: translateY(-5px); /* Move link up slightly */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Enhance shadow */
+}
+
+/* Heading 1 styles */
+h1 {
+    font-size: 4rem; /* Large font size */
+    color: black; /* Text color */
+    text-align: center; /* Center align text */
+    margin: 0; /* Remove margin */
+}
+
+/* Heading 2 styles */
+h2 {
+    font-size: 3rem; /* Medium font size */
+    color: black; /* Text color */
+    text-align: center; /* Center align text */
+    margin: 0; /* Remove margin */
+}
+
+/* Heading 3 styles */
+h3 {
+    margin: 10px 0; /* Vertical margin */
+    font-size: 1.4rem; /* Font size */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Footer styling */
+footer {
+    text-align: center; /* Center align content */
+    padding: 20px; /* Inner spacing */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    border-top: 2px solid rgba(255, 255, 255, 0.2); /* Top border with low opacity */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7); /* Shadow above the footer */
+    margin-top: 40px; /* Space above the footer */
+}
+
+/* Footer paragraph styles */
+footer p {
+    font-size: 0.9rem; /* Font size */
+    color: #fff; /* Text color */
+    margin: 0; /* Remove margin */
+}
+
+/* Game content section */
+#game-content {
+    text-align: center; /* Center-align content */
+    padding: 20px; /* Add padding */
+}
+
+/* Pagination container style */
+#pagination-container {
+    display: flex; /* Use flexbox for pagination */
+    justify-content: center; /* Center pagination buttons */
+    margin-top: 20px; /* Add top margin */
+    margin-bottom: 200px; /* Add bottom margin */
+}
+
+/* Additional style for score and lives */
+#lives, #score {
+    font-size: 1.2rem; /* Font size for score and lives */
+    color: black; /* Set text color to black */
+    margin: 20px; /* Margin around score and lives */
+}
+
+/* Button style for options */
+#options button {
+    padding: 10px; /* Add padding inside buttons */
+    margin: 10px; /* Margin between buttons */
+    font-size: 1.1em; /* Font size for buttons */
+    background-color: #4CAF50; /* Set background color */
+    color: white; /* Set text color to white */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Hover effect for buttons */
+#options button:hover {
+    background-color: #45a049; /* Darken the button color on hover */
+}
+
+/* Positioning of quotes in the layout */
+#quote1 {
+    top: 20%; /* Position quote 1 from the top */
+    left: 5%; /* Position quote 1 from the left */
+}
+
+#quote2 {
+    top: 20%; /* Position quote 2 from the top */
+    right: 5%; /* Position quote 2 from the right */
+}
+
+#quote3 {
+    bottom: 20%; /* Position quote 3 from the bottom */
+    left: 5%; /* Position quote 3 from the left */
+}
+
+#quote4 {
+    bottom: 20%; /* Position quote 4 from the bottom */
+    right: 5%; /* Position quote 4 from the right */
+}
+
+/* Container for quotes */
+#quote-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center align content horizontally */
+    align-items: center; /* Center align content vertically */
+    flex-direction: column; /* Stack items vertically */
+}
+
+/* Style for quote text in the container */
+#quote-container p {
+    font-size: 1rem; /* Set font size for quote text */
+    color: #ffffff; /* Set text color to white */
+    text-align: center; /* Center-align text */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Apply soft text shadow */
+    margin: 0; /* Remove margin */
+}
+
+/* Quote detail page */
+#quote-detail {
+    text-align: center; /* Center-align text */
+    padding: 50px 20px; /* Padding around content */
+}
+
+/* Heading style for the quote detail page */
+#quote-detail h2 {
+    font-size: 2em; /* Font size for the heading */
+    margin-bottom: 20px; /* Margin below the heading */
+}
+
+/* Paragraph style for the quote detail page */
+#quote-detail p {
+    font-size: 1.2em; /* Font size for paragraphs */
+    margin: 10px 0; /* Margin around paragraphs */
+}
+
+/* Style for the quote text on the game page */
+#quote-text {
+    font-size: 1.5em; /* Font size for quote text */
+    margin-bottom: 20px; /* Add margin below the quote */
+}
+
+/* Style for the quotes list */
+#quotes-list {
+    margin: 20px auto; /* Center align the quotes list */
+    padding: 20px; /* Add padding around the list */
+    max-width: 800px; /* Set a maximum width for the list */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8); /* Apply shadow for depth */
+    background-color: white; /* Set background color to white */
+    animation: fadeIn 2s ease forwards; /* Apply fade-in animation */
 }
 
 .content-wrapper {
     flex: 1;
-    /* Laat de inhoud zich uitrekken */
+    /* Let the content stretch */
     display: flex;
     flex-direction: column;
 }
 .quotes-page-ftr {
     margin-top: auto;
-}
-
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-
-@keyframes gradientFade {
-    0% {
-        background-position: 0 50%;
-    }
-    25% {
-        background-position: 25% 50%;
-    }
-    50% {
-        background-position: 50% 50%;
-    }
-    75% {
-        background-position: 75% 50%;
-    }
-    100% {
-        background-position: 0 50%;
-    }
-}
-
-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-
-/* Algemene lijst met links */
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    gap: 10px;
-}
-
-
-/* Stijlen voor de links */
-nav ul li a {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 15px 20px;
-    font-size: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
-}
-
-
-/* Stijlen voor de hover effect */
-nav ul li a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-}
-
-
-h1 {
-    font-size: 4rem;
-    color: black;
-    text-align: center;
-    margin: 0;
-}
-
-h2 {
-    font-size: 3rem;
-    color: black;
-    text-align: center;
-    margin: 0;
+    /* Pushes the footer to the bottom */
 }
 
 .title-section {
@@ -112,6 +228,7 @@ h2 {
     height: 100vh;
     text-align: center;
     transition: transform 1s ease, opacity 1s ease;
+    /* Title section with a smooth transition */
 }
 
 .quote-container {
@@ -126,266 +243,20 @@ h2 {
     font-size: 1.2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     opacity: 0;
-
+    /* Quote container with dark background and hidden initially */
 }
 
-#quote1 {
-    top: 20%;
-    left: 5%;
-}
-
-#quote2 {
-    top: 20%;
-    right: 5%;
-}
-
-#quote3 {
-    bottom: 20%;
-    left: 5%;
-}
-
-#quote4 {
-    bottom: 20%;
-    right: 5%;
-}
-
-@keyframes leftupout {
-    0% {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-        transition: transform 3s ease;
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(-130%) translateY(-190%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-        display: none;
-    }
-}
-
-@keyframes rightupout {
-    0% {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-        transition: transform 3s ease;
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(130%) translateY(-190%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-        display: none;
-    }
-}
-
-@keyframes rightdownout {
-    0% {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-        transition: transform 3s ease;
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(130%) translateY(190%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-        display: none;
-    }
-}
-
-@keyframes leftdownout {
-    0% {
-        opacity: 1;
-        transform: translateY(0) translateX(0);
-        transition: transform 3s ease;
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(-130%) translateY(190%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
-        display: none;
-    }
-}
-
-@keyframes fadeInMove {
-    0% {
-        display: block;
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    50% {
-        opacity: 0.5;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes floatEffect1 {
-    0% {
-        transform: translate(0, 0);
-        /* Beginpunt */
-    }
-    25% {
-        transform: translate(40px, -40px);
-        /* Beweegt naar rechtsboven */
-    }
-    50% {
-        transform: translate(80px, 0);
-        /* Beweegt naar rechts */
-    }
-    75% {
-        transform: translate(40px, 40px);
-        /* Beweegt naar rechtsonder */
-    }
-    100% {
-        transform: translate(0, 0);
-        /* Terug naar beginpunt */
-    }
-}
-
-@keyframes floatEffect2 {
-    0% {
-        transform: translate(0, 0);
-        /* Beginpunt */
-    }
-    25% {
-        transform: translate(-40px, -40px);
-        /* Beweegt naar linksboven */
-    }
-    50% {
-        transform: translate(-80px, 0);
-        /* Beweegt naar links */
-    }
-    75% {
-        transform: translate(-40px, 40px);
-        /* Beweegt naar linksonder */
-    }
-    100% {
-        transform: translate(0, 0);
-        /* Terug naar beginpunt */
-    }
-}
-
-@keyframes floatEffect3 {
-    0% {
-        transform: translate(0, 0);
-        /* Beginpunt */
-    }
-    25% {
-        transform: translate(50px, 50px);
-        /* Beweegt naar rechts beneden */
-    }
-    50% {
-        transform: translate(100px, 100px);
-        /* Beweegt naar verder naar rechts beneden */
-    }
-    75% {
-        transform: translate(50px, 150px);
-        /* Beweegt verder naar rechtsonder */
-    }
-    100% {
-        transform: translate(0, 0);
-        /* Terug naar beginpunt */
-    }
-}
-
-@keyframes floatEffect4 {
-    0% {
-        transform: translate(0, 0);
-        /* Beginpunt */
-    }
-    25% {
-        transform: translate(-50px, 100px);
-        /* Beweegt naar links beneden */
-    }
-    50% {
-        transform: translate(-100px, 100px);
-        /* Beweegt naar verder naar links beneden */
-    }
-    75% {
-        transform: translate(-50px, 50px);
-        /* Beweegt verder naar linksonder */
-    }
-    100% {
-        transform: translate(0, 0);
-        /* Terug naar beginpunt */
-    }
-}
-
-.quotes-section-1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.quotes-section-2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.quotes-section-1,
+.quotes-section-2,
 .quotes-section-3 {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* Flex containers for each quote section */
 }
 
-.quotes-container-1 {
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    width: 60%;
-    display: flex;
-    justify-content: space-around;
-    gap: 1em;
-    align-items: center;
-    flex-direction: column;
-}
-.quotes-container-1 h2 {
-    font-size: 2em;
-    /* Verhoogt de grootte van de titel */
-}
-
-.quotes-container-1 p {
-    font-size: 1.2em;
-    /* Verhoogt de grootte van de paragraaftekst */
-}
-
-.quotes-container-1 a {
-    font-size: 1.2em;
-    /* Verhoogt de grootte van de linktekst */
-}
-
-.quotes-container-2 {
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    width: 60%;
-    display: flex;
-    justify-content: space-around;
-    gap: 1em;
-    align-items: center;
-    flex-direction: column;
-}
-
-.quotes-container-2 h2 {
-    font-size: 2em;
-    /* Verhoogt de grootte van de titel */
-}
-
-.quotes-container-2 p {
-    font-size: 1.2em;
-    /* Verhoogt de grootte van de paragraaftekst */
-}
-
-.quotes-container-2 a {
-    font-size: 1.2em;
-    /* Verhoogt de grootte van de linktekst */
-}
-
+.quotes-container-1,
+.quotes-container-2,
 .quotes-container-3 {
     padding: 20px;
     margin: 20px;
@@ -398,287 +269,231 @@ h2 {
     gap: 1em;
     align-items: center;
     flex-direction: column;
+    /* Styling for the containers with blurred background */
 }
 
+.quotes-container-1 h2,
+.quotes-container-2 h2,
 .quotes-container-3 h2 {
     font-size: 2em;
-    /* Verhoogt de grootte van de titel */
+    /* Increases title font size */
 }
 
+.quotes-container-1 p,
+.quotes-container-2 p,
 .quotes-container-3 p {
     font-size: 1.2em;
-    /* Verhoogt de grootte van de paragraaftekst */
+    /* Increases paragraph text size */
 }
 
+.quotes-container-1 a,
+.quotes-container-2 a,
 .quotes-container-3 a {
     font-size: 1.2em;
-    /* Verhoogt de grootte van de linktekst */
+    /* Increases link text size */
 }
 
+/* Slide animation from left-up */
 .slide-left-up {
     animation: fadeInMove 3s ease-in-out forwards, floatEffect1 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
+/* Slide-out animation when visible for left-up */
 .slide-left-up.visible {
     animation: leftupout 1s ease-out forwards;
     opacity: 1;
 }
 
+/* Slide animation from right-up */
 .slide-right-up {
     animation: fadeInMove 3s ease-in-out forwards, floatEffect2 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
+/* Slide-out animation when visible for right-up */
 .slide-right-up.visible {
     animation: rightupout 1s ease-out forwards;
     opacity: 1;
 }
 
+/* Slide animation from left-down */
 .slide-left-down {
     animation: fadeInMove 3s ease-in-out forwards, floatEffect3 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
+/* Slide-out animation when visible for left-down */
 .slide-left-down.visible {
     animation: leftdownout 1s ease-out forwards;
     opacity: 1;
 }
 
+/* Slide animation from right-down */
 .slide-right-down {
     animation: fadeInMove 3s ease-in-out forwards, floatEffect4 15s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
+/* Slide-out animation when visible for right-down */
 .slide-right-down.visible {
     animation: rightdownout 1s ease-out forwards;
     opacity: 1;
 }
 
+/* Initial position and transition effect for title */
 .slide-up-title {
     transform: translateY(0);
-    /* Het element beweegt naar zijn originele positie */
     transition: transform 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
-/* Stijl wanneer het element moet verschijnen (sliden van links) */
+/* Animation for title sliding out of the screen */
 .slide-up-title.visible {
     transform: translateY(-400%);
-    /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
     transition: transform 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
+/* Initial position and transition effect for navigation */
 .slide-up-nav {
     transform: translateY(0);
-    /* Het element beweegt naar zijn originele positie */
     transition: transform 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
-/* Stijl wanneer het element moet verschijnen (sliden van links) */
+/* Animation for navigation sliding out of the screen */
 .slide-up-nav.visible {
     transform: translateY(-550%);
-    /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
     transition: transform 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
+/* Initial position and opacity for quotes section 1 */
 .slide-up-quotes-section1 {
     transform: translateY(0);
-    /* Het element beweegt naar zijn originele positie */
     opacity: 0;
     transition: transform 1s ease, opacity 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
-/* Stijl wanneer het element moet verschijnen (sliden van links) */
+/* Animation for quotes section 1 sliding out of the screen */
 .slide-up-quotes-section1.visible {
     opacity: 1;
     transform: translateY(-200%);
-    /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
     transition: transform 1s ease, opacity 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
+/* Additional animation for more movement of section 1 */
 .slide-up-quotes-section1.moreup {
     opacity: 0;
     transform: translateY(-400%);
-    /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
     transition: transform 1s ease, opacity 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
+/* Initial position and opacity for quotes section 2 */
 .slide-up-quotes-section2 {
     transform: translateY(0);
-    /* Het element beweegt naar zijn originele positie */
     opacity: 0;
     transition: transform 1s ease, opacity 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
+/* Animation for quotes section 2 sliding out of the screen */
 .slide-up-quotes-section2.visible {
     opacity: 1;
     transform: translateY(-300%);
-    /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
     transition: transform 1s ease, opacity 1s ease;
-    /* De duur en de overgangseffecten */
 }
+
+/* Additional animation for more movement of section 2 */
 .slide-up-quotes-section2.moreup {
     opacity: 0;
     transform: translateY(-400%);
-    /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
     transition: transform 1s ease, opacity 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
+/* Initial position and opacity for quotes section 3 */
 .slide-up-quotes-section3 {
     transform: translateY(0);
-    /* Het element beweegt naar zijn originele positie */
     opacity: 0;
     transition: transform 1s ease, opacity 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
+/* Animation for quotes section 3 sliding out of the screen */
 .slide-up-quotes-section3.visible {
     opacity: 1;
     transform: translateY(-400%);
-    /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
     transition: transform 1s ease, opacity 1s ease;
-    /* De duur en de overgangseffecten */
 }
 
+/* Grid layout for categories */
 .categories-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    /* Flexibele kolommen */
     gap: 20px;
-    /* Ruimte tussen items */
     padding: 40px;
-    /* Binnenmarge */
     background-color: rgba(0, 0, 0, 0);
-    /* Volledig doorzichtig */
     border-radius: 12px;
-    /* Ronde hoeken */
     margin: 40px auto;
-    /* Ruimte rondom */
     height: 500px;
-    /*
-      width: 80%; /* Maximaal breedte */
     max-width: 1200px;
-    /* Beperkte breedte voor grote schermen */
     align-items: start;
-    /* Items uitlijnen aan de bovenkant */
     animation: fadeInMove 1.5s ease-out;
 }
 
-/* Categorie-items styling */
+/* Category item style */
 .category-item {
     display: flex;
     flex-direction: column;
-    /* Verticale structuur */
     justify-content: center;
     align-items: center;
     background: white;
-    /* Licht doorzichtige achtergrond */
     padding: 20px;
-    /* Binnenmarge */
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: center;
-    /* Tekst gecentreerd */
     font-size: 1.1rem;
-    /* Tekstgrootte */
     font-weight: bold;
-    /* Vetgedrukte tekst */
     text-decoration: none;
     border: 2px solid rgba(255, 255, 255, 0.2);
-    /* Rand */
     border-radius: 10px;
-    /* Ronde hoeken */
     color: black;
-    /* Witte tekst */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    /* Diepte-effect */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
-    /* Animatie-effect */
 }
 
+/* Hover effect for category item */
 .category-item:hover {
     transform: translateY(-10px) scale(1.05);
-    /* Beweeg omhoog en vergroot bij hover */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-    /* Vergroot schaduw */
     border: 2px solid #8a2be2;
-    /* Paars gekleurde rand bij hover */
 }
 
+/* Paragraph text in category item */
 .category-item p {
     margin: 10px 0 0;
-    /* Ruimte bovenaan */
     font-size: 0.9rem;
-    /* Kleiner subtiele tekst */
     font-weight: 300;
-    /* Minder vet voor secundaire tekst */
     color: #ccc;
-    /* Subtiele kleur voor beschrijvingen */
 }
 
+/* Title text in category item */
 .category-item h3 {
     font-size: 1.3rem;
-    /* Grotere titeltekst */
     margin: 0 0 10px;
-    /* Ruimte onder de titel */
     color: #fff;
-    /* Heldere kleur voor de titel */
 }
 
+/* Category section 1 visibility handling */
 .categories-section1 {
     display: none;
     opacity: 0;
     transition: opacity 2s ease;
 }
+
 .categories-section1.visible {
     display: none;
     opacity: 1;
     transition: opacity 2s ease;
 }
 
+/* Styling for the quote section */
 .quotes-list-section {
     margin-bottom: 100px;
 }
 
-#quote-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#quote-container p {
-    font-size: 1rem;
-    color: #ffffff;
-    text-align: center;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-    margin: 0;
-}
-
-@keyframes bordercolor {
-    0% {
-        border-color: #2575fc;
-    }
-    25% {
-        border-color: #6a11cb;
-    }
-    50% {
-        border-color: #feb47b;
-    }
-    75% {
-        border-color: #4CAF50;
-    }
-    100% {
-        border-color: #2575fc;
-    }
-}
-
-
+/* Quote of the day container */
 .quote-of-the-day-container {
     background-color: white;
     border: 3px solid #2575fc;
@@ -692,28 +507,30 @@ h2 {
     animation: bordercolor 10s ease infinite;
 }
 
+/* Styling for the quote of the day */
 .quote-of-the-day {
     margin-top: 7%;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
+/* Footer styling for fixed position */
 .quote-of-the-day-footer {
     position: fixed;
     bottom: 0;
     width: 100%;
 }
-/* Introductie sectie */
+
+/* Introductory section styling */
 .intro {
     background: linear-gradient(to right, #ff7e5f, #feb47b, #6a11cb, #2575fc);
-
     color: white;
     text-align: center;
     padding: 100px 20px;
 }
 
+/* Content area for intro */
 .intro-content {
     max-width: 700px;
     margin: 0 auto;
@@ -722,16 +539,19 @@ h2 {
     border-radius: 8px;
 }
 
+/* Intro heading */
 .intro h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
 }
 
+/* Intro paragraph */
 .intro p {
     font-size: 1.1em;
     margin-bottom: 20px;
 }
 
+/* Call-to-action button in intro */
 .intro .cta-button {
     font-size: 1.2em;
     padding: 10px 20px;
@@ -742,19 +562,20 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect for call-to-action button */
 .intro .cta-button:hover {
     background-color: #e67e22;
 }
 
-/* Nieuwe Game sectie */
+/* Game section styling */
 .game-section {
     background-color: #f9f9f9;
     padding: 60px 20px;
     text-align: center;
     margin-bottom: 40px;
-    /* Toegevoegde marge onder de game-sectie */
 }
 
+/* Container for game section */
 .game-container {
     max-width: 600px;
     margin: 0 auto;
@@ -765,16 +586,19 @@ h2 {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Game header styling */
 .game-container h2 {
     font-size: 2.2em;
     margin-bottom: 20px;
 }
 
+/* Game paragraph text */
 .game-container p {
     font-size: 1.1em;
     margin-bottom: 30px;
 }
 
+/* Game call-to-action button */
 .game-container .cta-button {
     font-size: 1.2em;
     padding: 10px 20px;
@@ -785,646 +609,670 @@ h2 {
     transition: background-color 0.3s ease;
 }
 
+/* Hover effect for game call-to-action button */
 .game-container .cta-button:hover {
     background-color: #e67e22;
 }
 
-/* Detailpagina */
-#quote-detail {
-    text-align: center;
-    padding: 50px 20px;
-}
-
-#quote-detail h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-#quote-detail p {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-/* Footer styling */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border-top: 2px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.7);
-    margin-top: 40px;
-}
-
-footer p {
-    font-size: 0.9rem;
-    color: #fff;
-    margin: 0;
-}
-
-
-/* Stijlen voor de quote tekst */
+/* Styling for quote text */
 .quote-text {
     font-size: 18px;
     font-style: italic;
     color: #333;
-    /* Kleur voor de tekst */
     margin-bottom: 10px;
     padding: 10px;
     line-height: 1.6;
     text-decoration: underline;
 }
 
-/* Stijlen voor de quote categorie */
+/* Quote category styling */
 .quote-category {
     font-weight: bold;
     margin-bottom: 15px;
     font-size: 0.9rem;
     color: #333333;
-    /* Gebruik een lichtere kleur voor categorieën */
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
+/* Container for individual quote */
 .quote-container-a {
     width: 100%;
 }
 
+/* Share buttons styling */
 .share-buttons a {
     text-decoration: none;
 }
 
-
+/* Filter section styling */
 .filters {
     margin-top: 20px;
     text-align: center;
 }
+
+/* Styling for input and select elements inside .filters */
 .filters input,
 .filters select {
-    margin: 5px;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    /* Consistente randen */
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.6);
-    /* Transparante zwarte achtergrond */
-    color: black;
-    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4);
-    /* Subtiele schaduw */
+    margin: 5px; /* Margin for spacing */
+    padding: 10px; /* Padding inside the input/select */
+    font-size: 16px; /* Font size for readability */
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Subtle border */
+    border-radius: 5px; /* Rounded corners for input/select */
+    background-color: rgba(255, 255, 255, 0.6); /* Slightly transparent white background */
+    color: black; /* Black text color */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.4); /* Subtle shadow */
 }
+
+/* Focus state for input/select elements */
 .filters input:focus,
 .filters select:focus {
-    border-color: #0206a1;
-    /* Accentkleur bij focus */
-    outline: none;
+    border-color: #0206a1; /* Border color when focused */
+    outline: none; /* Remove outline on focus */
 }
 
-#quotes-list {
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 800px;
-    border-radius: 15px;
-    /* Meer afgeronde hoeken zoals elders */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
-    /* Subtiele schaduw */
-    background-color: white;
-    animation: fadeIn 2s ease forwards;
-    /* Gladde fade-in animatie */
-}
+/* Styling for quote boxes */
 .quote {
-    margin-bottom: 20px;
-    background-color: #cccccc;
-    /* Transparante zwarte achtergrond */
-    border-radius: 10px;
-    /* Consistente rondingen */
-    padding: 15px;
-    /* Ruimte rond de tekst */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-    /* Diepte-effect */
-    scale: 1;
-    transition: transform 0.3s ease, max-height 0.3s ease;
+    margin-bottom: 20px; /* Spacing below the quote */
+    background-color: #cccccc; /* Light grey background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Space around the text */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); /* Depth effect */
+    scale: 1; /* Default scale */
+    transition: transform 0.3s ease, max-height 0.3s ease; /* Smooth transition for scale and height */
 }
 
+/* Hover effect for quote boxes */
 .quote:hover {
-    background-color: #ffffff;
-    /* Lichter effect bij hover */
-    transform: translateY(-5px);
-    /* Subtiele beweging */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-    /* Meer nadruk */
-    transition: all 0.3s ease;
-    /* Soepel effect */
+    background-color: #ffffff; /* Lighter background on hover */
+    transform: translateY(-5px); /* Slight movement on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* More intense shadow on hover */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
 }
 
+/* Quote box when opened */
 .quote.open {
-    transform: scale(1.1);
-    /* Vergroot bij klikken */
-    max-height: 300px;
-    /* Pas aan afhankelijk van de details */
-    background-color: #cccccc;
+    transform: scale(1.1); /* Slight zoom in effect */
+    max-height: 300px; /* Set max height when open */
+    background-color: #cccccc; /* Keep the background color */
 }
 
+/* Prevent text decoration in open quote */
 .quote.open p {
     text-decoration: none;
 }
 
+/* Hidden quote details by default */
 .quote-details {
-    display: none;
-    transition: opacity 0.3s ease;
+    display: none; /* Hide details by default */
+    transition: opacity 0.3s ease; /* Smooth opacity transition */
 }
 
+/* Show quote details when opened */
 .quote.open .quote-details {
-    display: block;
-    /* Toon details bij openen */
+    display: block; /* Display details */
 }
 
+/* Styling for the text inside the quote */
 .quote-text {
-    font-size: 1.2rem;
-    font-style: italic;
-    color: black;
-    /* Zorgt ervoor dat tekst duidelijk blijft */
-    text-shadow: 0 0 10px #cccccc;
-    /* Subtiele gloed zoals elders */
-    line-height: 1.6;
-    /* Betere leesbaarheid */
-    width: 100%;
+    font-size: 1.2rem; /* Larger text for quotes */
+    font-style: italic; /* Italic text style */
+    color: black; /* Black text color */
+    text-shadow: 0 0 10px #cccccc; /* Subtle glow effect */
+    line-height: 1.6; /* Line height for readability */
+    width: 100%; /* Full width */
 }
 
-
+/* Pagination styling */
 .pagination {
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 20px; /* Spacing above the pagination */
+    text-align: center; /* Center-align pagination */
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center buttons */
 }
 
+/* Styling for pagination buttons */
 .pagination button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 16px;
-    background-color: rgba(0, 0, 0, 0.6);
-    /* Transparant zwart zoals elders */
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    /* Consistente randen */
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px 20px; /* Padding inside buttons */
+    margin: 0 10px; /* Margin between buttons */
+    font-size: 16px; /* Font size for the buttons */
+    background-color: rgba(0, 0, 0, 0.6); /* Transparent black background */
+    color: white; /* White text color */
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor indicates button is clickable */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover */
 }
+
+/* Hover effect for pagination buttons */
 .pagination button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    /* Lichter effect bij hover */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    /* Nadruk bij hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Lighter background on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* More shadow on hover */
 }
+
+/* Disabled state for pagination buttons */
 .pagination button:disabled {
-    background-color: rgba(255, 255, 255, 0.1);
-    cursor: not-allowed;
+    background-color: rgba(255, 255, 255, 0.1); /* Faded background for disabled state */
+    cursor: not-allowed; /* Cursor changes to not-allowed */
 }
 
-
-#pagination-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 200px;
-}
-
-#game-content {
-    text-align: center;
-    padding: 20px;
-}
-
-#quote-text {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-#options button {
-    padding: 10px;
-    margin: 10px;
-    font-size: 1.1em;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#options button:hover {
-    background-color: #45a049;
-}
-
-#score, #lives {
-    font-size: 1.2em;
-    margin: 20px;
-}
-
-
-/* Stijl voor de pop-up melding */
+/* Pop-up message styling */
 .popup {
-    display: none;
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 20px 40px;
-    border-radius: 8px;
-    border: 3px solid red;
-    font-size: 2em;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position on screen */
+    top: 40%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark transparent background */
+    color: white; /* White text color */
+    padding: 20px 40px; /* Padding inside pop-up */
+    border-radius: 8px; /* Rounded corners */
+    border: 3px solid red; /* Red border */
+    font-size: 2em; /* Larger text size */
+    z-index: 1000; /* Ensure it's on top of other elements */
+    opacity: 0; /* Start as invisible */
+    pointer-events: none; /* Prevent interaction before show */
+    transition: opacity 0.3s ease-in-out; /* Smooth opacity transition */
 }
 
-/* Animatie voor het tonen van de pop-up */
+/* Animation for showing the pop-up */
 .popup.show {
-    display: block;
-    opacity: 1;
-    animation: popup-appear 1s ease-out forwards;
+    display: block; /* Make it visible */
+    opacity: 1; /* Full opacity */
+    animation: popup-appear 1s ease-out forwards; /* Animation for appearance */
 }
 
-/* Animatie voor de pop-up die verdwijnt */
-@keyframes popup-appear {
-    0% {
-        transform: translate(-50%, -50%) scale(0.5);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.2);
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-
-
+/* Container for categories */
 .categories-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Wrap items if needed */
+    justify-content: center; /* Center categories */
+    gap: 20px; /* Spacing between categories */
+    margin-top: 20px; /* Space above the categories */
 }
 
+/* Individual category card styling */
 .category-card {
-    background-color: white;
-    color: black;
-    border: 3px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    overflow: hidden;
-    width: 200px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease, border-color 0.5s ease;
-    position: relative;
-    padding: 20px 10px;
-    cursor: pointer;
+    background-color: white; /* White background */
+    color: black; /* Black text color */
+    border: 3px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    border-radius: 15px; /* Rounded corners */
+    overflow: hidden; /* Prevent overflow */
+    width: 200px; /* Fixed width */
+    text-align: center; /* Center text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transition: all 0.3s ease, border-color 0.5s ease; /* Smooth transition */
+    position: relative; /* Allows positioning of elements inside */
+    padding: 20px 10px; /* Padding inside */
+    cursor: pointer; /* Indicate that it's clickable */
 }
 
+/* Category card styles */
 .category-card h3 {
     transform: scale(100%);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Smooth transition for scaling */
 }
 
 .category-card:hover {
-    border-color: #6a11cb;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    border-color: #6a11cb; /* Change border color on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
 }
 
 .category-card:hover h3 {
-    transform: scale(120%);
-    transition: all 0.3s ease;
+    transform: scale(120%); /* Scale up text inside the category card */
+    transition: all 0.3s ease; /* Smooth transition for scaling */
 }
 
 .category-card a {
-    text-decoration: none;
-    color: black;
+    text-decoration: none; /* Remove underline from links */
+    color: black; /* Set link color to black */
 }
 
-
-h3 {
-    margin: 10px 0;
-    font-size: 1.4rem;
-    transition: color 0.3s ease;
-}
-
+/* Description text styling */
 .description {
     margin-top: 20px;
     font-size: 1rem;
     color: black;
-    text-align: center;
-    font-style: italic;
+    text-align: center; /* Center align text */
+    font-style: italic; /* Italicize the description */
     min-height: 20px;
     margin-top: 2%;
-    opacity: 0;
-    animation: fadeIn 2s ease forwards;
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease forwards; /* Fade-in animation */
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
+/* Category quote container styling */
 .categories-quote-container {
-    display: none;
+    display: none; /* Initially hidden */
     gap: 20%;
     width: 100%;
     margin-top: 4%;
     margin-left: 20%;
     margin-right: 20%;
-    color: #fff;
+    color: #fff; /* White text color */
     font-style: italic;
     font-size: 1.2rem;
-    opacity: 0;
-    /* Start als onzichtbaar */
-    animation: fadeIn 2s ease forwards;
+    opacity: 0; /* Initially invisible */
+    animation: fadeIn 2s ease forwards; /* Fade-in animation */
 }
 
-
+/* Styling for individual category quotes */
 .categories-quote-1,
 .categories-quote-2 {
     margin: 5px 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
     border-radius: 10px;
     padding: 10px;
-    max-width: 20%;
+    max-width: 20%; /* Limit max width of quotes */
 }
 
-
+/* Categories section styling */
 .categories-section {
-    margin-top: 50px;
-}
-/* Stijlen voor de quote-detailpagina */
-#quote-detail {
-    text-align: center;
-    padding: 50px 20px;
+    margin-top: 50px; /* Space above the categories section */
 }
 
-#quote-detail h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-#quote-detail p {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
+/* Author image styling */
 .author-image {
     max-width: 180px;
     max-height: 320px;
     margin: 10px;
     height: auto;
-    border-radius: 8px;
+    border-radius: 8px; /* Rounded corners for images */
 }
 
-
-
+/* Quote game container styling */
 .quote-game-container {
     background-color: white;
-    border: 3px solid #2575fc;
+    border: 3px solid #2575fc; /* Border color */
     padding: 30px;
-    border-radius: 30px;
+    border-radius: 30px; /* Rounded corners */
     width: 60%;
-    margin: 50px auto;
+    margin: 50px auto; /* Center the container */
     display: flex;
     flex-direction: column;
     align-items: center;
-    animation: bordercolor 10s ease infinite;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    animation: bordercolor 10s ease infinite; /* Infinite border color animation */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Shadow effect */
 }
 
-/* Game header with title, lives, and score */
+/* Game header styling (title, lives, score) */
 .game-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Space below the header */
 }
 
 .game-header h2 {
     font-size: 2rem;
     color: black;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Text shadow effect */
     margin: 0;
-    text-align: center;
+    text-align: center; /* Center align the title */
 }
 
-
-#lives, #score {
-    font-size: 1.2rem;
-    color: black;
-}
-
-/* Option cards */
+/* Option cards container styling */
 .option-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 20px; /* Space above the option cards */
 }
 
-
+/* Individual option card styling */
 .option-card {
     background-color: white;
     color: black;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Semi-transparent border */
+    border-radius: 15px; /* Rounded corners */
     padding: 20px;
     width: 30%;
-    text-align: center;
+    text-align: center; /* Center text in option cards */
     font-size: 1.2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition on hover */
 }
 
 .option-card:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.2); /* Slight background color change on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Shadow effect on hover */
 }
 
+/* Title styling for sliding effect */
 .slide-up-title2 {
-    margin-top: 50px;
+    margin-top: 50px; /* Space above the title */
 }
 
+/* Heart icon styling */
 .heart-icon {
-    fill: darkgray;
-    margin-left: 5px;
-    /* Voeg wat ruimte toe tussen de auteur en het hartje */
-    font-size: 1.4rem;
-    /* Maak het icoon iets groter */
-    cursor: pointer;
-    /* Maak het klikbaar (indien je actie aan het hartje wilt koppelen) */
+    fill: darkgray; /* Default color of the heart icon */
+    margin-left: 5px; /* Space between author and heart */
+    font-size: 1.4rem; /* Slightly larger heart icon */
+    cursor: pointer; /* Make it clickable (for future action) */
     width: 20px;
     height: 20px;
 }
 
 .heart-icon:hover {
-    fill: gray;
-    /* Verander de kleur van het hart als de gebruiker erover hovert */
+    fill: gray; /* Change color of the heart icon on hover */
 }
 
+@keyframes gradientFade {
+    0% {
+        background-position: 0 50%; /* Start position of the background */
+    }
+    25% {
+        background-position: 25% 50%; /* Move background slightly */
+    }
+    50% {
+        background-position: 50% 50%; /* Halfway position */
+    }
+    75% {
+        background-position: 75% 50%; /* Move background further */
+    }
+    100% {
+        background-position: 0 50%; /* Reset to start position */
+    }
+}
+
+@keyframes leftupout {
+    0% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0) translateX(0); /* Initial position */
+        transition: transform 3s ease; /* Smooth transition */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateX(-130%) translateY(-190%); /* Moves element completely offscreen to the top left */
+        display: none; /* Ensures the element is hidden */
+    }
+}
+
+@keyframes rightupout {
+    0% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0) translateX(0); /* Initial position */
+        transition: transform 3s ease; /* Smooth transition */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateX(130%) translateY(-190%); /* Moves element completely offscreen to the top right */
+        display: none; /* Ensures the element is hidden */
+    }
+}
+
+@keyframes rightdownout {
+    0% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0) translateX(0); /* Initial position */
+        transition: transform 3s ease; /* Smooth transition */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateX(130%) translateY(190%); /* Moves element completely offscreen to the bottom right */
+        display: none; /* Ensures the element is hidden */
+    }
+}
+
+@keyframes leftdownout {
+    0% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0) translateX(0); /* Initial position */
+        transition: transform 3s ease; /* Smooth transition */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateX(-130%) translateY(190%); /* Moves element completely offscreen to the bottom left */
+        display: none; /* Ensures the element is hidden */
+    }
+}
+
+@keyframes fadeInMove {
+    0% {
+        display: block; /* Ensure element is displayed */
+        opacity: 0; /* Fully transparent */
+        transform: translateY(20px); /* Initial downward position */
+    }
+    50% {
+        opacity: 0.5; /* Half-visible */
+        transform: translateY(-10px); /* Moves up slightly */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Final position */
+    }
+}
+
+@keyframes floatEffect1 {
+    0% {
+        transform: translate(0, 0); /* Start point */
+    }
+    25% {
+        transform: translate(40px, -40px); /* Move to top right */
+    }
+    50% {
+        transform: translate(80px, 0); /* Move further to the right */
+    }
+    75% {
+        transform: translate(40px, 40px); /* Move to bottom right */
+    }
+    100% {
+        transform: translate(0, 0); /* Return to start point */
+    }
+}
+
+@keyframes floatEffect2 {
+    0% {
+        transform: translate(0, 0); /* Start point */
+    }
+    25% {
+        transform: translate(-40px, -40px); /* Move to top left */
+    }
+    50% {
+        transform: translate(-80px, 0); /* Move further to the left */
+    }
+    75% {
+        transform: translate(-40px, 40px); /* Move to bottom left */
+    }
+    100% {
+        transform: translate(0, 0); /* Return to start point */
+    }
+}
+
+@keyframes floatEffect3 {
+    0% {
+        transform: translate(0, 0); /* Start point */
+    }
+    25% {
+        transform: translate(50px, 50px); /* Move diagonally to bottom right */
+    }
+    50% {
+        transform: translate(100px, 100px); /* Move further to bottom right */
+    }
+    75% {
+        transform: translate(50px, 150px); /* Move even further to bottom right */
+    }
+    100% {
+        transform: translate(0, 0); /* Return to start point */
+    }
+}
+
+@keyframes floatEffect4 {
+    0% {
+        transform: translate(0, 0); /* Start point */
+    }
+    25% {
+        transform: translate(-50px, 100px); /* Move diagonally to bottom left */
+    }
+    50% {
+        transform: translate(-100px, 100px); /* Move further to bottom left */
+    }
+    75% {
+        transform: translate(-50px, 50px); /* Move slightly upwards */
+    }
+    100% {
+        transform: translate(0, 0); /* Return to start point */
+    }
+}
+
+@keyframes bordercolor {
+    0% {
+        border-color: #2575fc; /* Start color */
+    }
+    25% {
+        border-color: #6a11cb; /* Change to purple */
+    }
+    50% {
+        border-color: #feb47b; /* Change to orange */
+    }
+    75% {
+        border-color: #4CAF50; /* Change to green */
+    }
+    100% {
+        border-color: #2575fc; /* Reset to start color */
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Fully transparent */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Animation for a pop-up that appears */
+@keyframes popup-appear {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5); /* Start small */
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2); /* Slightly larger */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Final size */
+    }
+}
 
 @media (prefers-color-scheme: dark) {
     html, body {
-        color: #ffffff;
-        background: linear-gradient(135deg, #000000 0%, #0206a1 100%);
-        animation: gradientFade 30s ease infinite;
-        background-size: 600% 600%;
+        color: #ffffff; /* Set text color to white */
+        background: linear-gradient(135deg, #000000 0%, #0206a1 100%); /* Set background gradient */
+        animation: gradientFade 30s ease infinite; /* Apply gradient animation */
+        background-size: 600% 600%; /* Increase background size for the animation effect */
     }
 
-    .quote {
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .quote-text {
-        color: white;
-    }
-
-    .quote-category {
-        color: #ccc;
-    }
-
-    .quote.open {
-        border: 2px solid #6a11cb;
-        background-color: black;
-    }
-
-    .quote:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    #quotes-list {
-        background-color: transparent;
-    }
-
-    .quote.open:hover {
-        background-color: black;
-    }
-
-    h2 {
-        color: #ffffff;
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* Set hover effect for navigation links */
     }
 
     h1 {
-        color: #ffffff;
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        color: #ffffff; /* Set color for h1 text */
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Apply a soft text shadow */
     }
 
-    .quote-of-the-day-container {
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .category-card {
-        background-color: rgba(0, 0, 0, 0.7);
-        color: #fff;
-    }
-
-    .description {
-        color: #fff;
-    }
-
-    .category-card a {
-        color: #fff;
-    }
-
-    .quote-game-container {
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .game-header h2 {
-        color: #fff;
+    h2 {
+        color: #ffffff; /* Set color for h2 text */
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Apply a soft text shadow */
     }
 
     #lives, #score {
-        color: #fff;
+        color: #fff; /* Set color for lives and score elements */
     }
 
-    .option-card {
-        background-color: rgba(0, 0, 0, 0.7);
-        color: #fff;
+    #quotes-list {
+        background-color: transparent; /* Set transparent background for the quotes list */
+    }
+
+    .category-card {
+        background-color: rgba(0, 0, 0, 0.7); /* Set a semi-transparent black background for category cards */
+        color: #fff; /* Set text color to white */
+    }
+
+    .category-card a {
+        color: #fff; /* Set link color to white inside category cards */
+    }
+
+    .category-item {
+        background: rgba(255, 255, 255, 0.1); /* Set a subtle background for category items */
+        color: #ffffff; /* Set text color to white */
+    }
+
+    .description {
+        color: #fff; /* Set description text color to white */
     }
 
     .filters input,
     .filters select {
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        /* Consistente randen */
-        background-color: rgba(0, 0, 0, 0.6);
-        /* Transparante zwarte achtergrond */
-        color: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-        /* Subtiele schaduw */
+        border: 2px solid rgba(255, 255, 255, 0.2); /* Set a light border for filter inputs */
+        background-color: rgba(0, 0, 0, 0.6); /* Set a transparent black background for filters */
+        color: white; /* Set text color for filters to white */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4); /* Apply subtle shadow to filters */
     }
 
-    nav ul li a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
+    .game-header h2 {
+        color: #fff; /* Set color for game header text */
     }
 
-    .category-item {
-        background: rgba(255, 255, 255, 0.1);
-        color: #ffffff;
+    .option-card {
+        background-color: rgba(0, 0, 0, 0.7); /* Set semi-transparent black background for option cards */
+        color: #fff; /* Set text color to white */
     }
 
-}
-
-@media (max-width: 768px) {
-    .quote-of-the-day-container {
-        width: 90%;
-    }
-
-    #quote-container {
-        text-align: center;
-    }
-    .quote.open .quote-details img {
-        display: none;
-        /* Toon details bij openen */
+    .quote {
+        background-color: rgba(0, 0, 0, 0.4); /* Set semi-transparent black background for quotes */
     }
 
     .quote.open {
-        padding-bottom: 100px;
+        border: 2px solid #6a11cb; /* Set a purple border for open quotes */
+        background-color: black; /* Set black background for open quotes */
     }
 
+    .quote:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Set hover effect for quotes */
+    }
+
+    .quote.open:hover {
+        background-color: black; /* Set black background when hovering over open quotes */
+    }
+
+    .quote-category {
+        color: #ccc; /* Set category color for quotes to light gray */
+    }
+
+    .quote-text {
+        color: white; /* Set quote text color to white */
+    }
+
+    .quote-of-the-day-container {
+        background-color: rgba(0, 0, 0, 0.4); /* Set semi-transparent black background for the quote of the day container */
+    }
+
+    .quote-game-container {
+        background-color: rgba(0, 0, 0, 0.4); /* Set semi-transparent black background for the quote game container */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ensures background size is set for small screen sizes */
     html, body {
         background-size: 700% 700%;
     }
 
-    .categories-container {
-        margin-bottom: 200px;
+    /* Adds top margin to footer for small screens */
+    footer {
+        margin-top: 100px;
     }
 
-    .quote-game-container {
-        width: 80%;
-    }
-
-    .quote-of-the-day-footer {
-        margin-top: 200px;
-    }
-
-    .option-cards {
-        gap: 2px;
-        padding: 0;
-    }
-
-    .option-card {
-        padding: 6px;
-    }
-
+    /* Hides quotes 1 to 4 for smaller screens */
     #quote1 {
         display: none;
     }
@@ -1441,46 +1289,98 @@ h3 {
         display: none;
     }
 
-    footer {
-        margin-top: 100px;
+    /* Centers the quote container text */
+    #quote-container {
+        text-align: center;
     }
 
+    /* Adds bottom margin to the categories container */
+    .categories-container {
+        margin-bottom: 200px;
+    }
+
+    /* Reduces padding and gap between option cards */
+    .option-cards {
+        gap: 2px;
+        padding: 0;
+    }
+
+    /* Adds padding to individual option cards */
+    .option-card {
+        padding: 6px;
+    }
+
+    /* Translates title out of the screen when visible */
     .slide-up-title.visible {
         transform: translateY(-200%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        /* Moves the element completely off-screen vertically */
     }
+
+    /* Translates navigation menu out of the screen when visible */
     .slide-up-nav.visible {
         transform: translateY(-410%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        /* Moves the navigation menu completely off-screen vertically */
     }
 
+    /* Moves the first section of quotes out of the screen when visible */
     .slide-up-quotes-section1.visible {
         transform: translateY(-120%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        /* Moves the first quote section off-screen vertically */
     }
 
+    /* Moves the first section of quotes further up when moreup is added */
     .slide-up-quotes-section1.moreup {
         transform: translateY(-240%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        /* Moves the first quote section even further off-screen */
     }
 
+    /* Makes the second section of quotes visible and moves it off-screen */
     .slide-up-quotes-section2.visible {
         opacity: 1;
         transform: translateY(-200%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        /* Moves the second quote section off-screen vertically */
         transition: transform 1s ease, opacity 1s ease;
-        /* De duur en de overgangseffecten */
+        /* Transition effects for smoother animations */
     }
+
+    /* Moves the second section of quotes further off-screen when moreup is added */
     .slide-up-quotes-section2.moreup {
         opacity: 0;
         transform: translateY(-300%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        /* Moves the second quote section further off-screen vertically */
         transition: transform 1s ease, opacity 1s ease;
-        /* De duur en de overgangseffecten */
+        /* Transition effects for smoother animations */
     }
 
+    /* Moves the third section of quotes off-screen when visible */
     .slide-up-quotes-section3.visible {
         transform: translateY(-300%);
-        /* Verplaatst het element volledig buiten het scherm aan de linkerkant */
+        /* Moves the third quote section off-screen vertically */
+    }
+
+    /* Sets a smaller width for the quote game container */
+    .quote-game-container {
+        width: 80%;
+    }
+
+    /* Sets a smaller width for the quote of the day container */
+    .quote-of-the-day-container {
+        width: 90%;
+    }
+
+    /* Adds a large top margin to the quote of the day footer */
+    .quote-of-the-day-footer {
+        margin-top: 200px;
+    }
+
+    /* Adds bottom padding to open quotes */
+    .quote.open {
+        padding-bottom: 100px;
+    }
+
+    /* Hides image in quote details when the quote is open */
+    .quote.open .quote-details img {
+        display: none;
+        /* Hides the image when quote details are opened */
     }
 }
