@@ -49,6 +49,7 @@ Welcome to **The Book of Quotes**, a static website dedicated to showcasing a va
 
 ![Quotes game_Screenshot](screenshots/quotes_game_screenshot.png)
 *Screenshot of the Book of Quotes website showcasing the quotes game.*
+
 ---
 
 Thank you for visiting **The Book of Quotes**! Stay tuned for new updates and enjoy exploring the wisdom of some of the greatest minds in history.
