@@ -1257,7 +1257,7 @@ footer p {
 @media (max-width: 768px) {
     /* Ensures background size is set for small screen sizes */
     html, body {
-        background-size: 700% 700%;
+        background-size: 900% 900%;
     }
 
     /* Adds top margin to footer for small screens */
